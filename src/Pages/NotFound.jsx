@@ -5,8 +5,8 @@ import Footer from "../Components/Footer";
 export default function NotFound() {
   return (
     <>
-      <Error404 />
-      <Footer />
+      <Error404 />      
     </>
   );
 }
+
