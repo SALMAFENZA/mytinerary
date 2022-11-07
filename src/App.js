@@ -4,6 +4,8 @@ import NotFound from "./Pages/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer";
 import SignIn from "./Pages/SignIn";
+import NewCity from "./Pages/NewCity";
+import NewHotel from "./Pages/NewHotel";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/NewCity" element={<NewCity />} />
+          <Route path="/createhotel" element={<NewHotel />} />
           <Route path="*" element={<NotFound />} />
          
         </Routes>
