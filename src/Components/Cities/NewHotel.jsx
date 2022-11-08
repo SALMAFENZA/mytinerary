@@ -1,5 +1,6 @@
-import React from 'react'
-import { useRef } from 'react'
+import React from 'react';
+import { useRef } from 'react';
+import "../../Styles/NewHotel.css";
 
 export default function NewCity() {
 
@@ -24,34 +25,27 @@ console.log(dataHotel)
 
 localStorage.setItem("hotel", JSON.stringify(dataHotel) )
 
-
 }
 
-
-
-
-
-
   return (
-
+<div className='generalContainForm'>
+  <div className='formHotel'>
     <form className="formCity" onSubmit={create}>
     <div className="form-Citybody">
       <h1 className='Citytitle'>Hotel</h1>
-
-
       <input type="text" placeholder="Name" className='form__input' ref={nameRef}/>
       <input type="text" placeholder="Capacity" className='form__input' ref={CapacityRef}/>
       <input type="text" placeholder="City" className='form__input' ref={citiIdRef}/>
-      <input type="text" placeholder="Photo" className='form__input' ref={photoRef}/>
+      <input type="text" placeholder="Add a photo" className='form__input' ref={photoRef}/>
       <input type="text" placeholder="User" className='form__input' ref={citiuserIdRef}/>
-      
-
-
 
       <div className="submit">
         <button className='submit2'>Create</button>
       </div>
     </div>
   </form>
+  </div>
+</div>
   )
-}
+  }
+
