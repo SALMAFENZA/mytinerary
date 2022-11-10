@@ -1,3 +1,9 @@
+//mongo me va a generar los id automaticamente, cada id de admin lo va necesitar para crear una ciudad. 
+// 1st borro los id de aqui 
+//2nd creo en el back to2 los admins
+//3rd con los id q se generan de cada admin remplaxzo en las cities q tengo q crear ( remplazo admin 1 x el long code q me da mongo)
+// 3rd bis, object id, en el ult video y en el pdf.
+//4th yo eremplazo ese id, y ahi creo la ciudad/ itinerario whatever.
 let administrators = [
   {
     id: "admin1",

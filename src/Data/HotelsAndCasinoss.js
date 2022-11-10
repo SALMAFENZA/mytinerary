@@ -1,14 +1,12 @@
 
-function hoteles() {
-
 let hotelandcasinos = [
 {
     id: "ho1",
     name: "Intercontinental Amstel Amsterdam",
     photo: [
+      "https://images.squarespace-cdn.com/content/v1/560dbc25e4b0969564758eb5/1508074229550-544F52QRLOQ15XY2OBMP/CAB_9016.jpg?format=750w",
       "https://images.squarespace-cdn.com/content/v1/560dbc25e4b0969564758eb5/1573164962122-94NZA8RDIIHBIDJZSXSV/InterContinental+Amstel+Amsterdam+%2B%2B+www.thetravelpockets.com+%23amstelamsterdam?format=1500w",
       "https://images.squarespace-cdn.com/content/v1/560dbc25e4b0969564758eb5/1573163479704-5IVZRKNZYBFS96U2Z5JI/InterContinental+Amstel+Amsterdam+%2B%2B+www.thetravelpockets.com+%23amstelamsterdam?format=1500w",
-      "https://images.squarespace-cdn.com/content/v1/560dbc25e4b0969564758eb5/1508074229550-544F52QRLOQ15XY2OBMP/CAB_9016.jpg?format=750w",
     ],
     capacity: 500,
     citiId: "city1",
@@ -66,8 +64,8 @@ let hotelandcasinos = [
     id: "ho6",
     name: "Boutique Hotel Sablon",
     photo: [
-      "https://media-cdn.tripadvisor.com/media/photo-s/17/5d/02/11/verlaine-suite.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/88/56/d7/the-livingroom.jpg?w=700&h=-1&s=1",
+      "https://media-cdn.tripadvisor.com/media/photo-s/17/5d/02/11/verlaine-suite.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/5c/bc/94/garden.jpg?w=700&h=-1&s=1",
     ],
     capacity: "50000",
@@ -148,6 +146,4 @@ let hotelandcasinos = [
   },
 ]
 
-return (<SliderHotels hotelandcasinos={hotelandcasinos} range={4} text='Popular Hotel'/>)  
-}
-export default hoteles
+export default hotelandcasinos
