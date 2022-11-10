@@ -1,7 +1,6 @@
 import React from "react";
 import "../Styles/error404.css";
 import {Link as LinkNav} from "react-router-dom";
-import Home from "../Pages/Home";
 
 export default function Error404() {
   return (
