@@ -1,19 +1,21 @@
 import React from "react";
-import '../Styles/Footer.css'
-import { FooterToTop } from "./ScrollToTop";
+import "../Styles/Footer.css";
+import "./Arrow";
+import "./Arrow.css";
+import { Link as NavLink } from "react-router-dom";
+import { FooterToTop } from "./Arrow";
 
-
-
-export default function Footer() {
-  return (
+function Footer() {
+    return (
         <footer> 
             <div className="contenedorBoton">
-                <button className="boton">
-                    <a href="-">Cities</a>{" "}
-                </button>
-                <button className="boton">
-                    <a href="-">Hotels</a>
-                </button>
+            <NavLink to='/cardcities'>
+                    <button className='botom'>Cities</button>
+                </NavLink>
+
+                <NavLink to='/hotels'>
+                    <button className='botom'>Hotel</button>
+                </NavLink>
             </div>
             <div className="date">
                 <h3>Information</h3>
@@ -34,8 +36,10 @@ export default function Footer() {
                 <p>Credit</p>
                 <p>Transfer</p>
             </div>
+
             {<FooterToTop />}
-            
+
         </footer>
     );
 }
+export { Footer };

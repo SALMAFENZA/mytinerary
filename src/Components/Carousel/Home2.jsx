@@ -1,6 +1,6 @@
 import React from "react";
-import '../../Styles/Slider.css'
-import '../../Styles/ScrollToTop.css';
+import "../../Styles/Slider.css";
+import "../../Styles/ScrollToTop.css";
 import { useState } from "react";
 import Arrow from "./Arrow";
 
@@ -9,8 +9,6 @@ export default function Home2(props) {
   const [start, setStart] = useState(0);
   const end = start + range;
   const cities = props.cities;
-
-
 
   function right() {
     if (end >= 11) {
@@ -37,12 +35,12 @@ export default function Home2(props) {
   );
 
   return (
-    <div className="slider-container" >
-      <h4 className="slider-title" >{props.text}</h4>
-      <div className="slider-slider" >
-        <Arrow icon={"⋘"} function={left} />
+    <div className="slider-container">
+      <h4 className="slider-title">{props.text}</h4>
+      <div className="slider-slider">
+        <Arrow icon={"⋘"} function={left} /> 
         <Arrow icon={"⋙"} function={right} />
-        {cities.slice(start, end).map(ciudades)}        
+        {cities.slice(start, end).map(ciudades)}
       </div>
     </div>
   );
