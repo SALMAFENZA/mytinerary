@@ -15,30 +15,54 @@ function SignInForm() {
   };
   return (
     <>
-      <form className="form">
-        <div className="form-body">
-          <h1 className='title'>MyTinerary</h1>
-          <h2 className='title2'>Log-In</h2>
-          <input
+    <div className="sigin-body-cont">
+
+
+    <div className='contenedor-form-signin'>
+
+      <div className='title-singin'>
+
+        <h1 className='singin-form'>MyTinerary</h1>
+        <h2 className='singin-form'>Log-In</h2>
+
+      </div>
+
+    <div className='cont-form-singin'>
+
+    <form className="form-signin">
+
+          <input className='button-google'
             type="email"
             autoComplete='current-email'
             placeholder="Email"
-            className='form__input'
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
+
+          <input className='button-google'
             type="password"
             autoComplete='on'
             placeholder="Password"
-            className='form__input'
             onChange={(e) => setPassword(e.target.value)}
           />
-          <div className="submit">
-            <button className='submit2' onClick={submit}>Login</button>
-            <button className='submit2' onClick={submit}>Login with Google</button>
-          </div>
-        </div>
+
       </form>
+
+    </div>
+
+
+    <div className="submit-singin">
+
+    <button className='submit2-singin-google' onClick={submit}>Login</button>
+
+    <button className='submit2-singin-google' onClick={submit}>Login with Google</button>
+
+    </div>
+
+
+      </div>
+
+      </div>
+
     </>
   );
 };
