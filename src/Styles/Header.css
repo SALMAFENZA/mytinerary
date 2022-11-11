@@ -1,4 +1,4 @@
-.main{
+.main-nav-header{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -7,7 +7,7 @@
     font-weight: 700;
     background-color: black;
 }
-.buton-nav{
+.buton-nav-header{
     display: flex;
     align-items: center;
     flex-direction: column;

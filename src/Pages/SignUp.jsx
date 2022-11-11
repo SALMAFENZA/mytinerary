@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SignUp.css";
+import "../Styles/SignUp.css";
 import { useNavigate } from "react-router-dom";
 
 // funcionando correcto
@@ -40,7 +40,7 @@ export default function SignUp() {
 
   return (
     <>
-      <div className="content1">
+      <div className="content-singup">
         <div className="content-form">
           <h2>Sign Up</h2>
           <form onSubmit={handleSubmit}>
@@ -99,7 +99,7 @@ export default function SignUp() {
             />
 
             <div className="bottom">
-              <button className="botom" type="submit" onClick={submit}>
+              <button className="botom-signup" type="submit" onClick={submit}>
                 Register
               </button>
             </div>

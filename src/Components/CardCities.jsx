@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import ChecBoxCities from './ChecBoxCities.jsx'
-import CitiesCard from './CityCard.jsx'
+import CitiesCard from '../Pages/CityCard'
 import { Link as NavLink } from "react-router-dom";
-import { cities } from '../Data/dataCities'
+import  cities  from '../Data/dataCities';
 
 let filtrosSearch = []
 
@@ -31,7 +31,7 @@ export default function CardCities() {
         <label className='inputs'>Serch Here</label>
         <input onChange={ renderSearch } value = {search} className='search' type="text"/>
 
-        <NavLink to="/newcity">
+        <NavLink to="/new-city">
             <li className="addCity">
                 <a className="ancorLink"  href="-"> !! add your city !!</a>
             </li>

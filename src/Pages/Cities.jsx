@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import ChecBoxCities from '../Components/ChecBoxCities'
-import CitiesCard from '../Pages/CityCard'
+import Cities from './Cities'
 import { Link as NavLink } from "react-router-dom";
-// import { cities } from '../Data/dataCities';
 
 // let filtrosSearch = []
 
@@ -40,7 +39,7 @@ export default function CardCities() {
         </div>
 
         <div className='boxes'>
-            <CitiesCard/>
+            <Cities/>
         </div>
     </>
     )

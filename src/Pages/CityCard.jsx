@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './CityCard.css'
+import '../Styles/CityCard.css'
 import  cities  from '../Data/dataCities.js'
 
 export default function CityCard() {

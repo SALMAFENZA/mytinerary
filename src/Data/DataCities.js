@@ -20,7 +20,7 @@ const cities = [
   {
     id: "city3",
     name: "Beijing",
-    continent: "Europa",
+    continent: "Asia",
     photo:
       "https://media.traveler.es/photos/61375f03ea50dbd37eade9a3/master/w_1920%2Cc_limit/213176.jpg",
     population: 1300000,
@@ -29,7 +29,7 @@ const cities = [
   {
     id: "city4",
     name: "Beirut",
-    continent: "Europa",
+    continent: "Asia",
     photo:
       "https://media.traveler.es/photos/61375f0332d932c80fcb80f5/master/w_1920%2Cc_limit/111206.jpg",
     population: 1400000,
@@ -65,7 +65,7 @@ const cities = [
   {
     id: "city8",
     name: "Buenos Aires",
-    continent: "Europa",
+    continent: "America",
     photo:
       "https://media.traveler.es/photos/61375f0472cad4b2dbd5d0d2/master/w_1920%2Cc_limit/213180.jpg",
     population: 1800000,
@@ -74,7 +74,7 @@ const cities = [
   {
     id: "city9",
     name: "Ciudad Del Cabo",
-    continent: "Europa",
+    continent: "Africa",
     photo:
       "https://media.traveler.es/photos/61375f04c4f3d957866678a5/master/w_1920%2Cc_limit/213190.jpg",
     population: 1900000,
@@ -83,7 +83,7 @@ const cities = [
   {
     id: "city10",
     name: "Cartagena",
-    continent: "Europa",
+    continent: "America",
     photo:
       "https://media.traveler.es/photos/61375f04c4f3d957866678a8/master/w_1920%2Cc_limit/213216.jpg",
     population: 2000000,
@@ -92,7 +92,7 @@ const cities = [
   {
     id: "city11",
     name: "Chefchaouen",
-    continent: "Europa",
+    continent: "Africa",
     photo:
       "https://media.traveler.es/photos/61375f04030de94d067fbfd0/master/w_1920%2Cc_limit/213219.jpg",
     population: 2100000,
@@ -101,7 +101,7 @@ const cities = [
   {
     id: "city12",
     name: "Chiang Mai",
-    continent: "Europa",
+    continent: "Asia",
     photo:
       "https://media.traveler.es/photos/61375f0432d932c80fcb80f9/master/w_1920%2Cc_limit/213175.jpg",
     population: 2200000,

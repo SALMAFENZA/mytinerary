@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "../Styles/Footer.css";
 import "./Arrow";
 import "./Arrow.css";
 import { Link as NavLink } from "react-router-dom";
@@ -13,7 +13,7 @@ function Footer() {
                     <button className='botom'>Cities</button>
                 </NavLink>
 
-                <NavLink to=''>
+                <NavLink to='/hotels'>
                     <button className='botom'>Hotel</button>
                 </NavLink>
             </div>

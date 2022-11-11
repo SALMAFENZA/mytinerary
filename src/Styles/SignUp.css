@@ -7,7 +7,7 @@ h2{
     font-size: 2rem;
     text-decoration: underline;
 }
-.content1{
+.content-singup{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,6 +17,7 @@ h2{
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 80vh;
+    width: 100%;
 }
 .content-form{
     display: flex;
@@ -52,7 +53,7 @@ input{
 .bottom{
     text-align: center;
 }
-.botom{
+.botom-signup{
     font-weight: 700;
     font-size: 1.3rem;
     height: 2.3rem;
@@ -60,7 +61,7 @@ input{
     border-radius: .5rem;
     margin: .5rem;
 }
-.botom:hover{
+.botom-signup:hover{
     color: rgb(22, 93, 104);
     width: 7.3rem;
     text-decoration: underline;

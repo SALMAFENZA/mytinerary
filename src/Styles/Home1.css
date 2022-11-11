@@ -7,7 +7,7 @@ h1{
     font-size: 3.5rem;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.648);
 }
-.body{
+.body-home1-forro-del-orto{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -17,6 +17,7 @@ h1{
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    width: 100%;
 }
 .box-image{
     width: 40rem;
@@ -27,9 +28,9 @@ h1{
     width: 100%;
     height: 100%;
 }
-.botom{
+.botom-home1{
     height: 5rem;
-    width: 15rem;
+    width: 12rem;
     margin: 4rem;
     border-radius: .5rem;
     font-size: 2rem;
@@ -37,12 +38,11 @@ h1{
     background-color: black;
     border: solid 2px white;
 }
-.botom:hover{
+.botom-home1:hover{
     font-size: 2.3rem;
     font-weight: 700;
     border-radius:15px 0px 15px 0px;
     box-shadow: 4px 5px black;
     color: black;
     background-color: rgb(180, 137, 82);
-
 }

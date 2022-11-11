@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './NewCity.css'
+import '../Styles/NewCity.css'
 import { useNavigate } from 'react-router-dom';
 
 // funcionando correcto

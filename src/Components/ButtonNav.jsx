@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./ButtonNav.css";
+import "../Styles/ButtonNav.css";
 import { Link as NavLink } from "react-router-dom";
 
 function ButtonNav(props) {
@@ -25,12 +25,12 @@ function ButtonNav(props) {
             alt="-"
           />
           <ul className="ul">
-          <NavLink to="/cardcities">
+                    <NavLink to="/SignIn">
                         <li className="a">
                             <a className="ancorLink" href="-">{n1}</a>
                         </li>
                     </NavLink>
-                    <NavLink to="/signp">
+                    <NavLink to="/signup">
                         <li className="b">
                             <a className="ancorLink"  href="-">{n2}</a>
                         </li>

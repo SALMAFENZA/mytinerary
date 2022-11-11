@@ -1,0 +1,146 @@
+.cont-details-city{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("https://wallpaperbat.com/img/365276-san-francisco-skyline-hd-wallpaper.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title-city{
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+}
+.card-details-city{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    background-color: rgba(87, 85, 85, 0.732);
+    border: solid 4px black;
+    border-radius: 1rem;
+    width: 40rem;
+    min-height: 40rem;
+    margin: 1rem;
+    opacity: .9;
+}
+.card-img-city{
+    width: 90%;
+    height: 100%;
+    margin: 1rem;
+}
+.img-city{
+    border-radius: 1rem;
+    border: solid 2px black;
+    width: 100%;
+    height: 100%;
+}
+.img-details-city{
+    height: 50%;
+    height: 40%;
+}
+.card-details-tourist{
+    text-align: center;
+    font-weight: 600;
+    margin: .7rem;
+    font-size: 1.3rem;
+    color: white;
+}
+
+/* <------------ card two -----------> */
+.cont-city-turist{
+    display: flex;
+}
+
+.cont-details-tourist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(87, 85, 85, 0.732);
+    border: solid 4px black;
+    border-radius: 1rem;
+    width: 40rem;
+    min-height: 40rem;
+    margin: 1rem;
+    opacity: .9;
+}
+.cont-img-details{
+    border: solid 3px black;
+    border-radius: 1rem;
+    width: 85%;
+    height: 90%;
+}
+.img-details-city{
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+.cont-desciption-city{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont-text-city{
+    text-align: center;
+    color: white;
+    margin: .5rem;
+    font-size: 1.3rem;
+    font-family: 700;
+}
+
+@media screen and (max-width: 768px){
+
+    .card-details-city{
+        width: 30rem;
+        min-height: 35rem;
+    }
+
+    .cont-details-tourist{
+        width: 30rem;
+        min-height: 35rem;
+    }
+}
+@media screen and (max-width: 768px){
+
+    .card-details-city{
+        width: 25rem;
+        min-height: 35rem;
+    }
+
+    .cont-details-tourist{
+        width: 25rem;
+        min-height: 35rem;
+    }
+}
+@media screen and (max-width: 460px){
+
+    .card-details-city{
+        width: 20rem;
+        min-height: 35rem;
+    }
+
+    .cont-details-tourist{
+        width: 20rem;
+        min-height: 35rem;
+    }
+}
+@media screen and (max-width: 460px){
+
+    .card-details-city{
+        width: 18rem;
+        min-height: 35rem;
+    }
+
+    .cont-details-tourist{
+        width: 18rem;
+        min-height: 35rem;
+    }
+}
+
+
