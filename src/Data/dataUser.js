@@ -11,8 +11,8 @@ const used =[
     },
     {
     id: 'user2',
-        name: 'Jose',
-        lastName: 'Lopez',
+        name: 'Lucas',
+        lastName: ' Silva',
         age: 30,
         password: 'lopez1234',
         code: '4d5c6e',
@@ -21,8 +21,8 @@ const used =[
     },
     {
         id: 'user3',
-        name: 'Jose',
-        lastName: 'Lopez',
+        name: 'Eric',
+        lastName: 'Rodriguez',
         age: 30,
         password: 'lopez1234',
         code: '5f6h7i',
