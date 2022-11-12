@@ -1,4 +1,5 @@
 const cities = [
+
   {
     id: "city1",
     name: "Amsterdam",
@@ -107,6 +108,7 @@ const cities = [
     population: 2200000,
     userdId: "admin4",
   },
+  
 ];
 
 export default cities;
