@@ -1,4 +1,5 @@
 export const touristActivity =[
+
     {
         id: 'tourist1',
         citild: 'city1',
@@ -83,4 +84,5 @@ export const touristActivity =[
         duration: 240,
         userId: 'admin2',
     }
+    
 ]

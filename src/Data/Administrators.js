@@ -3,8 +3,9 @@
 //2nd creo en el back to2 los admins
 //3rd con los id q se generan de cada admin remplaxzo en las cities q tengo q crear ( remplazo admin 1 x el long code q me da mongo)
 // 3rd bis, object id, en el ult video y en el pdf.
-//4th yo eremplazo ese id, y ahi creo la ciudad/ itinerario whatever.
-let administrators = [
+//4th yo eremplazo ese id, y ahi creo la ciudad/ itinerario whatever.e
+export  let administrators = [
+
   {
     id: "admin1",
     name: "Eric",
@@ -49,4 +50,5 @@ let administrators = [
     verified: true,
     logged: true,
   },
+  
 ];
