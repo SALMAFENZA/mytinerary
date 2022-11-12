@@ -1,4 +1,4 @@
-const used =[
+export const used =[
     
     {
         id: 'user1',
