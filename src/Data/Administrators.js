@@ -5,6 +5,7 @@
 // 3rd bis, object id, en el ult video y en el pdf.
 //4th yo eremplazo ese id, y ahi creo la ciudad/ itinerario whatever.
 let administrators = [
+
   {
     id: "admin1",
     name: "Eric",
@@ -49,4 +50,5 @@ let administrators = [
     verified: true,
     logged: true,
   },
+  
 ];

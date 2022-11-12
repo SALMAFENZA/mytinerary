@@ -1,5 +1,6 @@
 
 let hotelandcasinos = [
+
 {
     id: "ho1",
     name: "Intercontinental Amstel Amsterdam",
@@ -144,6 +145,7 @@ let hotelandcasinos = [
     citiId: "city12",
     userId: "admin1",
   },
+  
 ]
 
 export default hotelandcasinos
