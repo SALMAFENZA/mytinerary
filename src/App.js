@@ -23,7 +23,7 @@ function App() {
           <Route path='/signup' element = {<SignUp/>}/>
           <Route path="/signin" element={<SignIn/>}/>
           <Route path="/cardcities" element={<CardCities/>}/>
-          <Route path='/detailscities/:idcity' element={<City/>}/>
+          <Route path='/city/:id' element={<City/>}/>
           <Route path='/new-city' element={<NewCity/>}/>
           <Route path="/hotels" element = {<Hotels/>}/>
           <Route path="/hotel" element={<HotelCard/>}/>
