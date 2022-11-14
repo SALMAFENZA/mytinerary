@@ -1,6 +1,8 @@
 import React from 'react';
 import { useRef } from 'react';
 import "../../Styles/NewHotel.css";
+import axios from 'axios';
+
 
 export default function NewCity() {
 
@@ -16,14 +18,15 @@ function create (e){
   
   const dataHotel = {
     name: nameRef.current.value,
-    capacity: CapacityRef.current.value,
-    citiId: citiIdRef.current.value,
     photo: photoRef.current.value,
+    capacity: CapacityRef.current.value,
+    cityId: citiIdRef.current.value,
     userId: citiuserIdRef.current.value,
   };
 console.log(dataHotel)
 
-localStorage.setItem("hotel", JSON.stringify(dataHotel) )
+// localStorage.setItem("hotel", JSON.stringify(dataHotel) )
+axios.post(`http://localhost:8000/api/hotels/create`,dataHotel )
 
 }
 
