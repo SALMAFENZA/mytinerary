@@ -1,9 +1,7 @@
 import react , { useEffect , useState , useRef} from "react"
 import { Link } from 'react-router-dom'
 import '../Styles/CityCard.css'
-import  cities  from '../Data/dataCities.js'
 import axios from "axios"
-import Search from "../Components/Search"
 
 
 export default function CityCard() {
@@ -13,28 +11,22 @@ const [cityCard, setCityCard] = useState()
 const searchRef = useRef()
 
 function searchinput(){
-
   setSearchValue(searchRef.current.value)
   console.log(searchRef.current.value)
+  console.log(searchRef)
   
 }
 
 
 
-useEffect(() => {
-        if (searchValue) {
-          console.log("Caso 1")
-            axios.get(`http://localhost:8000/api/cities/?continent=${searchValue}`)
-
-
+useEffect(() => {       
+            axios({
+              method: 'GET',
+              url: `http://localhost:8000/api/cities?name=${searchValue}`,            
+            })
             .then(res => setCityCard(res.data.city))
             .catch(err => console.log(err))
-        } else {
-          console.log("Caso 2")
-            axios.get("http://localhost:8000/api/cities")
-            .then(res => setCityCard(res.data.city))
-            .catch(err => console.log(err))
-        }
+       
     },[searchValue])
 
 
@@ -54,7 +46,7 @@ useEffect(() => {
             <img className="image" src={e.photo} alt="hotel" />
           </div>
           <h3>{e.name}</h3>
-          <Link to={`/detailscities/${e.id}`} className='nav-cities'>See More</Link>
+          <Link to={`/api/cities/${e._id}`} className='nav-cities'>See More</Link>
         </div>
     </div>
     )
@@ -63,5 +55,3 @@ useEffect(() => {
 
   )
 }
-
-//CityCard

@@ -3,8 +3,36 @@ import { useParams } from "react-router-dom";
 import  cities  from '../Data/dataCities'
 import '../Styles/City.css'
 import {touristActivity} from "../Data/touristActivity"
+import axios from "axios"
+
 
 const DetailsCities = () =>  {
+
+
+
+    axios({
+        method: 'READ',
+        url: `http://localhost:8000/api/cities${idcity}`,     
+
+      })
+      .then(res => DetailsCities(res.data.city))
+      .catch(err => console.log(err))
+
+      console.log(idcity)       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     let {idcity} = useParams()
 
