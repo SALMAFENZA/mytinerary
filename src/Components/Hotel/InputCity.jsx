@@ -1,6 +1,6 @@
 import react , { useEffect , useState , useRef} from "react"
 import { Link } from 'react-router-dom'
-import '../Styles/CityCard.css'
+import '../../Styles/CityCard.css'
 import axios from "axios"
 
 
@@ -27,8 +27,11 @@ useEffect(() => {
             .then(res => setCityCard(res.data.city))
             .catch(err => console.log(err))
     },[searchValue])
+
+
   return (
 <>
+
 <div className="filters">
   <label className='inputs'>Serch Here</label>
   <input ref={searchRef} className='search' type="text" onChange={searchinput}/>

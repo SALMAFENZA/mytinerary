@@ -5,7 +5,7 @@ import { Link as NavLink } from "react-router-dom";
 
 function ButtonNav1(props) {
 
-    let { n1 , n2 , n3, n4,n5 } = props;
+    let {n4, n5, n6 } = props;
     let [mostraryOcultar, setMostraryOcultar] = useState(false);
 
     let hidee = () =>{
@@ -18,28 +18,21 @@ return(
                 <img className="img" onClick={hidee} src="https://cdn-icons-png.flaticon.com/512/3240/3240696.png"  width="40" height="30"alt="-" />
                 <ul className="ul">
 
-                  
-        
-                    <NavLink to="/new-city">
-                        <li className="a">
-                            <a className="ancorLink" href="-">{n2}</a>
-                        </li>
-                    </NavLink>
                     <NavLink to="/hotels">
                         <li className="a">
-                            <a className="ancorLink" href="-">{n3}</a>
+                            <a className="ancorLink" href="-">{n4}</a>
                         </li>
                     </NavLink>
 
                     <NavLink to="/">
                         <li className="b">
-                            <a className="ancorLink"  href="-">{n4}</a>
+                            <a className="ancorLink"  href="-">{n5}</a>
                         </li>
                     </NavLink>
 
                     <NavLink to="/cardcities">
                         <li className="b">
-                            <a className="ancorLink"  href="-">{n5}</a>
+                            <a className="ancorLink"  href="-">{n6}</a>
                         </li>
                     </NavLink>
 
