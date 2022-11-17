@@ -2,24 +2,18 @@
 import React from "react";
 import "../../Styles/HotelCard.css";
 import { Link } from "react-router-dom";
-import hotelandcasinos from "../../Data/HotelsAndCasinoss";
 
-export default function HotelCard() {
+export default function HotelCard(props) {
 
-  const casinoshotels = hotelandcasinos.map(item => item)
+  let {hotel} = props
   return (
-    casinoshotels.map (item => {
-    return(
     <>
     <div className="ContainCard-hotel">
-      <div
-        className="card"
-        style={{ backgroundImage: `url(${item.photo[0]})` }}
-      >
+      <div className="card"style= {{ backgroundImage: `url(${hotel.photo[0]})` }} >
         <div className="content">
-          <h2 className="title">{item.name}</h2>
-          <p className="copy">Capacity: {item.capacity}</p>
-          <Link key={item.id} to={`/DetailsHotel/${item.id}`} className="nav-cities">
+          <h2 className="title">{hotel.name}</h2>
+          <p className="copy">Capacity: {hotel.capacity}</p>
+          <Link key={hotel._id} to={`/DetailsHotel/${hotel._id}`} className="nav-cities">
             See More
           </Link>
         </div>
@@ -27,5 +21,4 @@ export default function HotelCard() {
     </div>
     </>
     )
-  }))
-}
+  }
