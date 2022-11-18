@@ -6,7 +6,8 @@ export default function NewCity() {
   const countryRef = useRef();
   const populationRef = useRef();
   const photoRef = useRef();
-
+  const userRef= useRef();
+  
   function create(e) {
     e.preventDefault(); /// Evita que la página se recargue al llenar el formulario
 
@@ -15,13 +16,12 @@ export default function NewCity() {
       continent: countryRef.current.value,
       photo: photoRef.current.value,
       population: populationRef.current.value,
-      userId: "636f1edc14f79b76f5e442bb",
+      userRef: userRef.current.value,
 
     };
-    console.log(dataCity);
-
-    localStorage.setItem("city", JSON.stringify(dataCity));
+    
   }
+  console.log(dataCity);
 
   return (
     <form className="formCity" onSubmit={create}>
@@ -52,8 +52,12 @@ export default function NewCity() {
           className="form__input"
           ref={photoRef}
         />
-       
-
+        <input
+          type="text"
+          placeholder="User"
+          className="form__input"
+          ref={userRef}
+        />
         <div className="submit">
           <button className="submit2">Create</button>
         </div>
