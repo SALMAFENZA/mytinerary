@@ -16,9 +16,10 @@ function searchinput(){
   console.log(searchRef)
   
 }
+//en see more, me va llevar a una ruta diferente donde no esten todos los filtros 
+///desde aca tengo q mandar la info (cityCard, de ahi saco user y pic) a un componente nuevo
 
-
-
+//en mongodb agregar la propiedad user
 useEffect(() => {       
             axios({
               method: 'GET',
@@ -27,7 +28,10 @@ useEffect(() => {
             .then(res => setCityCard(res.data.city))
             .catch(err => console.log(err))
     },[searchValue])
-  return (
+
+console.log(cityCard)
+
+      return (
 <>
 <div className="filters">
   <label className='inputs'>Serch Here</label>
@@ -39,10 +43,10 @@ useEffect(() => {
       <div>
         <div className="box2">
           <div className='cont-img'>
-            <img className="image" src={e.photo} alt="hotel" />
+            <img className="image" src={e.photo} alt="hotel"/>
           </div>
           <h3>{e.name}</h3>
-          <Link to={`/api/cities/${e._id}`} className='nav-cities'>See More</Link>
+          <Link to={`/city/${e._id}`} className='nav-cities'>See More</Link>
         </div>
     </div>
     )
@@ -51,3 +55,5 @@ useEffect(() => {
 
   )
 }
+//en vez de llamar un link llamo a un componente o q el boton me mande a esa ruta pero q me muestre otrp compon
+// inventarle ruta nueva menos lo de la linea 23
