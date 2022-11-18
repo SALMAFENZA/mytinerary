@@ -1,38 +1,75 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import  hotelandcasinos  from '../Data/HotelsAndCasinoss'
-import '../Styles/detailsHotel.css'
-
+import "../Styles/detailsHotel.css";
+import axios from "axios";
 
 export default function DetailsHotel() {
+  let [hotel, setHotel] = useState([]);
+  let [shows, setShows] = useState([]);
 
-    let {idh} = useParams()
+  let { idh } = useParams();
 
-    let detailsHotel = hotelandcasinos.find( HotelsAndCasinoss=> HotelsAndCasinoss.id === idh)
-    console.log(detailsHotel)
-        return(
-        <>
-            <div className='cont-card-hotel'>
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/hotels/${idh}`)
+      .then((res) => setHotel(res.data.data))
+      .catch((error) => console.log(error));
 
-            <div className="cont-hotel-card">
+    axios
+      .get(`http://localhost:8000/api/shows?hotelId=${idh}`)
+      .then((res) => setShows(res.data.response))
+      .catch((error) => console.log(error));
+  }, [idh]);
+
+  if (hotel.length !== 0) {
+    return (
+      <>
+        <div className="cont-card-hotel">
+          <div className="cont-hotel-card">
+            <div className="cont-text-hotel">
+              <div className="text-hotel">{hotel.name}</div>
+            </div>
+
+            <div className="cont-img-hotel">
+              <img className="img-hotel" src={hotel.photo[1]} alt="" />
+            </div>
 
             <div className="cont-text-hotel">
-                <div className='text-hotel'>{detailsHotel.name}</div>
+              <div className="text-hotel">Capacity: {hotel.capacity}</div>
             </div>
-
-            <div className="cont-img-hotel" >
-                <img className="img-hotel" src={detailsHotel.photo[1]} alt="" />
-            </div>
-                
-            <div className="cont-text-hotel">
-                <div className='text-hotel'>Capacity: {detailsHotel.capacity}</div>
-            </div>
-
-            </div>
-
+          </div>
         </div>
-        </>
-        )
-        }
-        
+        <div className="cont-card-hotel">
+          <div className="cont-hotel-card">
+            <div className="cont-text-hotel">
+              <div className="text-hotel">{shows[0].name}</div>
+            </div>
 
+            <div className="cont-img-hotel">
+              <img className="img-hotel" src={shows[0].photo} alt="" />
+            </div>
+
+            <div className="cont-text-hotel">
+              <div className="text-hotel">Capacity: {shows[0].description}</div>
+            </div>
+          </div>
+        </div>
+        <div className="cont-card-hotel">
+          <div className="cont-hotel-card">
+            <div className="cont-text-hotel">
+              <div className="text-hotel">{shows[1].name}</div>
+            </div>
+
+            <div className="cont-img-hotel">
+              <img className="img-hotel" src={shows[1].photo} alt="" />
+            </div>
+
+            <div className="cont-text-hotel">
+              <div className="text-hotel">Capacity: {shows[1].description}</div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
