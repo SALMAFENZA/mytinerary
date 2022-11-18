@@ -1,3 +1,5 @@
+//esto es el formulario para sumar una nueva ciudad 
+
 import React, { useState , useRef } from "react";
 import "../Styles/NewCity.css";
 import { useNavigate } from "react-router-dom";
@@ -5,15 +7,14 @@ import axios from "axios";
 
 // funcionando correcto
 
-export default function SignUp() {
+export default function AddCity() {
   const navigate = useNavigate();
 
-
-  const nameRef = useRef()
-  const continentRef = useRef()
-  const photoRef = useRef()
-  const populationRef = useRef()
-  
+  const nameRef = useRef();
+  const continentRef = useRef();
+  const photoRef = useRef();
+  const populationRef = useRef();
+  const  userRef= useRef()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,8 +27,9 @@ export default function SignUp() {
         continent: continentRef.current.value,
         photo: photoRef.current.value,
         population: populationRef.current.value,
-        userId: "636f1edc14f79b76f5e442bb"
+        user: userRef.current.value
       };
+      console.log(dataCity)
 
     axios({
       method: "POST",
@@ -76,6 +78,13 @@ export default function SignUp() {
               type="text"
               placeholder="Population"
               ref={populationRef}
+            />
+            <label htmlFor="text">User</label>
+            <input
+              name="User"
+              type="text"
+              placeholder="User"
+              ref={userRef}
             />
 
             
