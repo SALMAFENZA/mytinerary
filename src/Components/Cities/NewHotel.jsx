@@ -26,7 +26,10 @@ function create (e){
 console.log(dataHotel)
 
 // localStorage.setItem("hotel", JSON.stringify(dataHotel) )
-axios.post(`http://localhost:8000/api/hotels/create`,dataHotel )
+axios.post(`http://localhost:8000/api/hotels`,dataHotel )
+.then(res=>{
+  console.log(res)
+})
 
 }
 

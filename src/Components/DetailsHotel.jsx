@@ -20,7 +20,7 @@ export default function DetailsHotel() {
       .then((res) => setShows(res.data.response))
       .catch((error) => console.log(error));
   }, [idh]);
-
+  console.log(shows);
   if (hotel.length !== 0) {
     return (
       <>
@@ -39,36 +39,25 @@ export default function DetailsHotel() {
             </div>
           </div>
         </div>
-        <div className="cont-card-hotel">
-          <div className="cont-hotel-card">
-            <div className="cont-text-hotel">
-              <div className="text-hotel">{shows[0].name}</div>
-            </div>
+        {shows.map((e) => {
+          return (
+            <div className="cont-card-hotel">
+              <div className="cont-hotel-card">
+                <div className="cont-text-hotel">
+                  <div className="text-hotel">{e.name}</div>
+                </div>
 
-            <div className="cont-img-hotel">
-              <img className="img-hotel" src={shows[0].photo} alt="" />
-            </div>
+                <div className="cont-img-hotel">
+                  <img className="img-hotel" src={e.photo} alt={e.name} />
+                </div>
 
-            <div className="cont-text-hotel">
-              <div className="text-hotel">Capacity: {shows[0].description}</div>
+                <div className="cont-text-hotel">
+                  <div className="text-hotel">Show: {e.description}</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="cont-card-hotel">
-          <div className="cont-hotel-card">
-            <div className="cont-text-hotel">
-              <div className="text-hotel">{shows[1].name}</div>
-            </div>
-
-            <div className="cont-img-hotel">
-              <img className="img-hotel" src={shows[1].photo} alt="" />
-            </div>
-
-            <div className="cont-text-hotel">
-              <div className="text-hotel">Capacity: {shows[1].description}</div>
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </>
     );
   }
