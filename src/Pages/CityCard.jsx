@@ -1,59 +1,84 @@
-import react , { useEffect , useState , useRef} from "react"
-import { Link } from 'react-router-dom'
-import '../Styles/CityCard.css'
-import axios from "axios"
-
+import react, { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import "../Styles/CityCard.css";
+import axios from "axios";
 
 export default function CityCard() {
+  const [searchValue, setSearchValue] = useState("");
+  const [cityCard, setCityCard] = useState();
+  const [checkboxArray, setCheckboxArray] = useState();
+  const [checked, setChecked] = useState([]);
+  const searchRef = useRef();
 
-const [searchValue,setSearchValue] = useState("")
-const [cityCard, setCityCard] = useState()
-const searchRef = useRef()
+  function searchinput() {
+    setSearchValue(searchRef.current.value);
+    console.log(searchRef.current.value);
+  }
+  useEffect(() => {
+    axios({
+      method: "GET",
+      url: `http://localhost:8000/api/cities?`,
+    })
+      .then((res) => setCheckboxArray(res.data.city))
+      .catch((err) => console.log(err));
+      
+    axios.get('http://localhost:8000/api/cities', {
+      params: {
+        continent: checked,
+        name: searchValue
+      }
+    }).then((res) => setCityCard(res.data.city))
+    .catch((err) => console.log(err));
 
-function searchinput(){
-  setSearchValue(searchRef.current.value)
-  console.log(searchRef.current.value)
-  console.log(searchRef)
-  
-}
-//en see more, me va llevar a una ruta diferente donde no esten todos los filtros 
-///desde aca tengo q mandar la info (cityCard, de ahi saco user y pic) a un componente nuevo
+  }, [searchValue, checked]);
+  const checkBox = Array.from(new Set(checkboxArray?.map((e) => e.continent)));
 
-//en mongodb agregar la propiedad user
-useEffect(() => {       
-            axios({
-              method: 'GET',
-              url: `http://localhost:8000/api/cities?name=${searchValue}`,            
-            })
-            .then(res => setCityCard(res.data.city))
-            .catch(err => console.log(err))
-    },[searchValue])
+  function filterCheck(e) {
+    console.log(e.target.id);
+    let checks = [];
+    if (e.target.checked) {
+      checks = [...checked, e.target.id];
+    } else {
+      checks = checked.filter((checkbox) => checkbox !== e.target.id);
+    }
+    setChecked(checks);
+  }
+  return (
+    <>
+      <div className="filters">
+        {checkBox?.map((e) => {
+          return (
+            <label>
+              {e}
+              <input id={e} type="checkbox" onClick={filterCheck} />
+            </label>
+          );
+        })}
 
-console.log(cityCard)
+        <label className="inputs">Serch Here</label>
+        <input
+          ref={searchRef}
+          className="search"
+          type="text"
+          onChange={searchinput}
+        />
+      </div>
 
-      return (
-<>
-<div className="filters">
-  <label className='inputs'>Serch Here</label>
-  <input ref={searchRef} className='search' type="text" onChange={searchinput}/>
-</div>
-
-{cityCard?.map (e => {
-  return(
-      <div>
-        <div className="box2">
-          <div className='cont-img'>
-            <img className="image" src={e.photo} alt="hotel"/>
+      {cityCard?.map((e) => {
+        return (
+          <div>
+            <div className="box2">
+              <div className="cont-img">
+                <img className="image" src={e.photo} alt="hotel" />
+              </div>
+              <h3>{e.name}</h3>
+              <Link to={`/city/${e._id}`} className="nav-cities">
+                See More
+              </Link>
+            </div>
           </div>
-          <h3>{e.name}</h3>
-          <Link to={`/city/${e._id}`} className='nav-cities'>See More</Link>
-        </div>
-    </div>
-    )
-  }) }
-</>
-
-  )
+        );
+      })}
+    </>
+  );
 }
-//en vez de llamar un link llamo a un componente o q el boton me mande a esa ruta pero q me muestre otrp compon
-// inventarle ruta nueva menos lo de la linea 23
