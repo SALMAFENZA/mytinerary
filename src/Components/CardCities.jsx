@@ -8,7 +8,7 @@ export default function CardCities() {
     return (
     <>
         <div className='filters'>
-            <ChecBoxCities/>
+            
             <CityCard/>
         </div>
     </>
