@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import cities from "../Data/dataCities";
 import "../Styles/City.css";
-import { touristActivity } from "../Data/touristActivity";
 import axios from "axios";
 
 const DetailsCities = () => {
   const { id } = useParams();
-  const [city, setCity] = useState({});
+  const [city, setCity] = useState([]);
+  const [itineraries, setItineraries] = useState([]);
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/cities/${id}`)
-
       .then((res) => setCity(res.data.response))
-      .then((res) => console.log(res))
-
+      .catch((err) => console.log(err));
+    axios
+      .get(`http://localhost:8000/api/itineraries?cityId=${id}`)
+      .then((res) => setItineraries(res.data.response))
       .catch((err) => console.log(err));
   }, [id]);
 
@@ -29,36 +29,28 @@ const DetailsCities = () => {
           <div className="title-details-city">
             <h5 className="title-city">{city.name}</h5>
           </div>
-
           <div className="card-img-city">
             <img className="img-city" src={city.photo} alt={""} />
-            <h4 className="tittle-details-city">Population: {city.population}</h4>
+            <h4 className="tittle-details-city">
+              Population: {city.population}
+            </h4>
           </div>
-
           <div />
-          {
-            <div className="card-details-tourist">
-              {[].map((e) => {
-                return <div>{e.description}</div>;
-              })}
-            </div>
-          }
+          <div className="card-details-tourist">
+            <div>{city.description}</div>
+          </div>
         </div>
 
         <div>
-          {[].map((e) => {
-            console.log(e)
+          {itineraries.map((e) => {
+            console.log(e);
             return (
               <>
                 <div className="cont-city-turist">
                   <div className="cont-details-tourist">
                     <div className="title-city"> {e.name} </div>
                     <div className="cont-img-details">
-                      <img
-                        className="img-details-city"
-                        src={e.photo[0]}
-                        alt={e.name}
-                      />
+                      <img className="img-details-city"src={e.photo} alt={e.name}/>
                     </div>
                     <div className="cont-desciption-city">
                       <div className="cont-text-city"> {e.description} </div>
@@ -66,7 +58,6 @@ const DetailsCities = () => {
                       <div className="cont-text-city"> U$D : {e.price}</div>
 
                       <div className="cont-text-city">
-                        {" "}
                         time duration :{e.duration}
                       </div>
                     </div>
