@@ -1,110 +1,101 @@
-import React, { useState } from 'react'
-import '../Styles/NewCity.css'
-import { useNavigate } from 'react-router-dom';
+//esto es el formulario para sumar una nueva ciudad 
+
+import React, { useState , useRef } from "react";
+import "../Styles/NewCity.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 // funcionando correcto
 
-export default function SignUp(){
+export default function AddCity() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const nameRef = useRef();
+  const continentRef = useRef();
+  const photoRef = useRef();
+  const populationRef = useRef();
+  const  userRef= useRef()
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        localStorage.setItem('user', JSON.stringify({name, surName, country, continent, photo, population, mail}));
-        navigate('login');
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // localStorage.setItem('user', JSON.stringify({name, continent, photo, population}));
+    // navigate('login');
 
-const [name, setName] = useState("");
-const [surName, setSurName] = useState("");
-const [country, setCountry] = useState("");
-const [continent, setContinent] = useState("")
-const [photo, setPhoto] = useState("")
-const [population, setPopulation] = useState("")
-const [mail, setMail] = useState("");
+    console.log(nameRef)
+    const dataCity = {
+        name: nameRef.current.value,
+        continent: continentRef.current.value,
+        photo: photoRef.current.value,
+        population: populationRef.current.value,
+        user: userRef.current.value
+      };
+      console.log(dataCity)
 
-const submit = () => {
-    if (name === '' || surName === '' || country === '' ||  mail === ''){
-    } else {
-        localStorage.setItem("name", name);
-        localStorage.setItem("surName", surName);
-    }
-};
+    axios({
+      method: "POST",
+      url: `http://localhost:8000/api/cities`,
+        data: dataCity
+    })
+      .then((response) => alert(response.data.message))
+      .catch((err) => alert(err.response.data.message));
+  };
 
-return (
-<>
-    <div className='contentCity'>
-            <div className='content-form'>
-                <h2>City</h2>
-        <form onSubmit={handleSubmit}>
 
+  return (
+    <>
+      <div className="contentCity">
+        <div className="content-form">
+          <h2>City</h2>
+          <form onSubmit={handleSubmit}>
             <label htmlFor="text">Name</label>
             <input
-                name = 'name'
-                value={name}
-                type="text"
-                placeholder='Name'
-                onChange={(e) => setName(e.target.value)}
+              name="name"
+              type="text"
+              placeholder="Name"
+              ref={nameRef}
             />
 
-            <label htmlFor="text">LastName</label>
-            <input
-                name = 'surName'
-                value={surName}
-                type="text"
-                placeholder="SurName"
-                onChange={(e) => setSurName(e.target.value)}
-            />
-
-            <label htmlFor="text">Country</label>
-            <input
-                name = 'country'
-                value={country}
-                type="text"
-                placeholder="Country"
-                onChange={(e) => setCountry(e.target.value)}
-            />
-
+            
             <label htmlFor="text">Continent</label>
             <input
-                name = 'continent'
-                value={continent}
-                type="text"
-                placeholder="continent"
-                onChange={(e) => setContinent(e.target.value)}
+              name="continent"
+              type="text"
+              placeholder="continent"
+              ref={continentRef}
             />
-            
+
             <label htmlFor="text">Photo</label>
             <input
-                name = 'photo'
-                value={photo}
-                type="text"
-                placeholder="Photo"
-                onChange={(e) => setPhoto(e.target.value)}
+              name="photo"
+              type="text"
+              placeholder="Photo"
+              ref={photoRef}
             />
-            
+
             <label htmlFor="text">Population</label>
             <input
-                name = 'Population'
-                value={population}
-                type="text"
-                placeholder="Population"
-                onChange={(e) => setPopulation(e.target.value)}
+              name="Population"
+              type="text"
+              placeholder="Population"
+              ref={populationRef}
             />
-
-            <label htmlFor="email">Email</label>
+            <label htmlFor="text">User</label>
             <input
-                name = 'mail'
-                value={mail}
-                type="email"
-                placeholder="Email"
-                onChange={(e) => setMail(e.target.value)}
+              name="User"
+              type="text"
+              placeholder="User"
+              ref={userRef}
             />
 
-            <div className='bottom'>
-                <button className='botom' type='submit' onClick={submit}>Register</button>
+            
+            <div className="bottom">
+              <button className="botom" type="submit" onClick={handleSubmit}>
+                Register
+              </button>
             </div>
-        </form>
+          </form>
         </div>
-    </div>
-</>
-)}
+      </div>
+    </>
+  );
+}

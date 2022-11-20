@@ -1,4 +1,4 @@
-let shows = [
+    export let shows = [
 
 {
     id: "it11",

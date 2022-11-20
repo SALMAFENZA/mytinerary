@@ -6,7 +6,6 @@
     background-position: center;
     background-position: center;
     background-size: cover;
-    width: 100vw;
     height: 100vh;
 }
 .Citytitle{
@@ -69,4 +68,10 @@
     font-weight: 700;
     font-size: 1.3rem;
     border: solid 5px black;
+}
+.submit2:hover{
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.485);
+    background-color: black;
+    border: solid 3px white;
 }
