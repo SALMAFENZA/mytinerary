@@ -11,6 +11,7 @@ import NewCity from './Pages/NewCity'
 import CardCities from './Components/CardCities'
 import HomeComplete  from './Components/layouts/HomeComplete'
 import DetailsHotel from "./Components/DetailsHotel";
+
 // todas las rutas que van en pats minusculas
 
 function App() {
