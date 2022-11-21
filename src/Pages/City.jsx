@@ -7,6 +7,7 @@ const DetailsCities = () => {
   const { id } = useParams();
   const [city, setCity] = useState([]);
   const [itineraries, setItineraries] = useState([]);
+  
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/cities/${id}`)

@@ -21,15 +21,16 @@ export default function CityCard() {
     })
       .then((res) => setCheckboxArray(res.data.city))
       .catch((err) => console.log(err));
-      
-    axios.get('http://localhost:8000/api/cities', {
-      params: {
-        continent: checked,
-        name: searchValue
-      }
-    }).then((res) => setCityCard(res.data.city))
-    .catch((err) => console.log(err));
 
+    axios
+      .get("http://localhost:8000/api/cities", {
+        params: {
+          continent: checked,
+          name: searchValue,
+        },
+      })
+      .then((res) => setCityCard(res.data.city))
+      .catch((err) => console.log(err));
   }, [searchValue, checked]);
   const checkBox = Array.from(new Set(checkboxArray?.map((e) => e.continent)));
 
