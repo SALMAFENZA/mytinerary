@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link as NavLink } from "react-router-dom";
 import { ButtonNav } from "../Components/ButtonNav";
 import "../Styles/CityCard.css";
+import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from "axios";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
@@ -59,16 +59,6 @@ confirmAlert({
       }
     ]
   });
-
-
-
-
-
-
-
-
-
-
 }
 function alertFunction (e){
     toast(e)
@@ -135,6 +125,7 @@ let checks =(Array.from(checkRef.current).filter(check => check.checked  === tru
           <ToastContainer/>
       </>
   );
+  
 
   
 }
