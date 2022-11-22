@@ -11,8 +11,7 @@ import NewCity from './Pages/NewCity'
 import CardCities from './Components/CardCities'
 import HomeComplete  from './Components/layouts/HomeComplete'
 import DetailsHotel from "./Components/DetailsHotel";
-
-// todas las rutas que van en pats minusculas
+import MyHotels from "./Components/MyHotels";
 
 function App() {
   return (
@@ -29,6 +28,7 @@ function App() {
           <Route path='/detailsHotel/:idh' element={<DetailsHotel/>}/>
           <Route path="/new-hotel" element={<NewHotel />}/>
           <Route path="*" element={<NotFound/>}/>
+          <Route path="/myhotels" element={<MyHotels/>} />
         </Routes>
         </MainComplete>
       </BrowserRouter>

@@ -1,0 +1,6 @@
+.nuevoFormularioLogin{
+    display: flex;
+    flex-direction: column;
+    min-height: 65vh;
+    background-color: rgba(86, 71, 71, 0.572);
+}
