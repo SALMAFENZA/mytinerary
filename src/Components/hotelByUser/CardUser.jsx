@@ -1,9 +1,33 @@
 import React, { useState } from "react";
 import { EditCard } from "./EditCard";
+import { useDispatch } from "react-redux";
+import myHotelAction from "../../redux/actions/myHotelAction";
+import Swal from "sweetalert2";
 import '../../Styles/myHotels.css'
 
 export default function Cards({ name, photo, description, id }) {
   let [push, setPush] = useState(false);
+
+  const dispatch = useDispatch()
+  function deleteIt(e) {
+  Swal.fire({
+      title: 'Are you sure?',
+      text: "This action can't be undone",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#ffff9',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+            'Deleted!',
+            dispatch(myHotelAction.deleteHotels(e)),
+          'Your file has been deleted.',
+        )
+      }
+    })
+}
 
   return (
   <div className="cont-main-myhotels">
@@ -17,7 +41,7 @@ export default function Cards({ name, photo, description, id }) {
             <button className="button-edit-myhotels" value={id} onClick={() => setPush(!push)}>
               Edit
             </button>
-            <button className="button-edit-myhotels">Delete</button>
+            <button className="button-edit-myhotels" value={id} onClick={e=> deleteIt(id)}>Delete</button>
           </div>
         </article>
       </div>
