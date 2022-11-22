@@ -11,7 +11,8 @@ import NewCity from './Pages/NewCity'
 import CardCities from './Components/CardCities'
 import HomeComplete  from './Components/layouts/HomeComplete'
 import DetailsHotel from "./Components/DetailsHotel";
-import MyHotels from "./Components/MyHotels";
+import MyHotels from "./Components/hotelByUser/MyHotels";
+
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
           <Route path="/hotels" element = {<Hotels/>}/>
           <Route path='/detailsHotel/:idh' element={<DetailsHotel/>}/>
           <Route path="/new-hotel" element={<NewHotel />}/>
-          <Route path="*" element={<NotFound/>}/>
           <Route path="/myhotels" element={<MyHotels/>} />
+          <Route path="*" element={<NotFound/>}/>
+          
         </Routes>
         </MainComplete>
       </BrowserRouter>
