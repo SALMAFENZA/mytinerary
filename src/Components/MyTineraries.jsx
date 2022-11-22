@@ -50,10 +50,10 @@ export default function MyTineraries() {
   return (
     itinerary?.map((e) => (
 <>
-      <div className="cont-city-turist">
-        <div className="cont-details-tourist">
+      <div className="cont-details-city">
+        <div className="card-details-city">
           <div className="title-city"> {e.name} </div>
-          <div className="cont-img-details">
+          <div className="img-city">
             <img
               className="img-details-city"
               src={e.photo}
@@ -62,21 +62,21 @@ export default function MyTineraries() {
           </div>
           <div className="cont-desciption-city">
             <div className="cont-text-city"> {e.description} </div>
-
             <div className="cont-text-city"> U$D : {e.price}</div>
-
             <div className="cont-text-city">
               time duration :{e.duration}
             </div>
           </div>
-        </div>
+          <div className="contBoton" >
         <NavLink to={`/edititinerary/${e._id}`}>
-          <button id={e._id}>Edit</button>{" "}
+          <button className="buttonItinerary" id={e._id}>Edit it</button>{" "}
         </NavLink>
-        <button id={e._id} onClick={deleteItinerary}>
+        <button className="buttonItinerary" id={e._id} onClick={deleteItinerary}>
           Delete
         </button>
       </div>
+      </div>
+        </div>
     </>
 
     )
