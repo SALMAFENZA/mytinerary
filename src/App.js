@@ -15,6 +15,7 @@ import MyCities from "./Pages/MyCities";
 import EditCity from "./Pages/EditCity";
 // todas las rutas que van en pats minusculas
 import MyHotels from "./Components/MyHotels";
+import MyHotels from "./Components/hotelByUser/MyHotels";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path="/editcity/:id" element={<EditCity />}/>
           <Route path="*" element={<NotFound/>}/>
           <Route path="/myhotels" element={<MyHotels/>} />
+          <Route path="*" element={<NotFound/>}/>
+          
         </Routes>
         </MainComplete>
       </BrowserRouter>
