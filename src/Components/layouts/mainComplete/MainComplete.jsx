@@ -8,7 +8,7 @@ export default function main(props) {
     <div className="Home">
       <AutoToTop />
       <Header />
-      <div className="div-main">{props.children}</div>
+      <div className="cont-details-city">{props.children}</div>
       <Footer/>
     </div>
     
