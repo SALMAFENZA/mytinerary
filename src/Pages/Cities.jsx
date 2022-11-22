@@ -1,6 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import ChecBoxCities from "../Components/ChecBoxCities";
-import Cities from "./Cities";
 import { Link as NavLink } from "react-router-dom";
 import { ButtonNav } from "../Components/ButtonNav";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,7 +14,7 @@ export default function CardCities() {
     const searchRef = useRef();
 
     let { citiesList, searchValue, checked} = useSelector((store) => store.citiesReducer);
-    // console.log(citiesList);
+    console.log(citiesList);
     const dispatch = useDispatch();
     useEffect(() => {
         axios
@@ -28,7 +26,7 @@ export default function CardCities() {
         if (!citiesList){
             dispatch(citiesAction.getCities({
             searchValue: "",
-            checked: [] 
+            checked: ""
            }))}
     },[]);
 
@@ -85,6 +83,7 @@ let checks =(Array.from(checkRef.current).filter(check => check.checked  === tru
                             <NavLink to={`/city/${e._id}`} className="nav-cities">
                                 See More
                             </NavLink>
+                            
                         </div>
                     </div>
                 );
