@@ -16,6 +16,11 @@ const getCities = createAsyncThunk("getCities", async ({checked, searchValue}) =
   }
 });
 
+
+
+
+
+
 const citiesAction = {
   getCities,
 };
