@@ -12,9 +12,8 @@ const citiIdRef = useRef()
 const photoRef = useRef()
 const citiuserIdRef = useRef()
 
-function create (e){
+async function create (e){
   e.preventDefault();  /// Evita que la página se recargue al llenar el formulario
-  
   
   const dataHotel = {
     name: nameRef.current.value,
@@ -23,10 +22,18 @@ function create (e){
     cityId: citiIdRef.current.value,
     userId: citiuserIdRef.current.value,
   };
-console.log(dataHotel)
 
 // localStorage.setItem("hotel", JSON.stringify(dataHotel) )
-axios.post(`http://localhost:8000/api/hotels/create`,dataHotel )
+try {
+  let res = await axios.post(`http://localhost:8000/api/hotels`,dataHotel )
+  if (res.data.success) {
+      alert('Hotels Create!')
+  } else {
+      alert(res.data.message.join('- - - - - - -'))
+  }
+} catch(error) {
+  console.log(error.message)
+}
 
 }
 
@@ -51,4 +58,3 @@ axios.post(`http://localhost:8000/api/hotels/create`,dataHotel )
 </div>
   )
   }
-

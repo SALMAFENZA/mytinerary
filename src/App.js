@@ -8,9 +8,10 @@ import MainComplete from './Components/layouts/mainComplete/MainComplete'
 import SignUp from './Pages/SignUp'
 import City from './Pages/City'
 import NewCity from './Pages/NewCity'
-import CardCities from './Components/CardCities'
+import Cities from './Pages/Cities'
 import HomeComplete  from './Components/layouts/HomeComplete'
 import DetailsHotel from "./Components/DetailsHotel";
+
 // todas las rutas que van en pats minusculas
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
           <Route path='/' element = {<HomeComplete/>}/>
           <Route path='/signup' element = {<SignUp/>}/>
           <Route path="/signin" element={<SignIn/>}/>
-          <Route path="/cardcities" element={<CardCities/>}/>
+          <Route path="/cardcities" element={<Cities/>}/>
           <Route path='/city/:id' element={<City/>}/>
           <Route path='/new-city' element={<NewCity/>}/>
           <Route path="/hotels" element = {<Hotels/>}/>

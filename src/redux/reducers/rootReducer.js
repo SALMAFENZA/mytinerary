@@ -1,7 +1,7 @@
 import citiesReducer from "./citiesReducer";
 
-const rootReducers ={
+const rootReducer ={
     citiesReducer
 }
 
-export default rootReducers;
+export default rootReducer;

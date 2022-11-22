@@ -3,8 +3,8 @@ import citiesAction from "../actions/citiesAction";
 
 const initialState = {
    citiesList: [],
-   loading: false,
-   error: false
+   checked: [],
+   searchValue: " ",
 };
 const citiesReducer = createReducer(initialState, (cities) => {
    cities.addCase(
@@ -12,7 +12,8 @@ const citiesReducer = createReducer(initialState, (cities) => {
       function (state, action) {
          return {
             ...state,
-            loading: false,
+            checked: action.payload.checked,
+            searchValue: action.payload.searchValue,
             citiesList: action.payload.citiesList
          };
       }
