@@ -34,6 +34,7 @@ const DetailsCities = () => {
             <img className="img-city" src={city.photo} alt={""} />
             <h4 className="tittle-details-city">
               Population: {city.population}
+              Edit: {city.botonEdit}
             </h4>
           </div>
           <div />
