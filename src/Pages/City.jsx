@@ -30,12 +30,12 @@ const DetailsCities = () => {
           <div className="title-details-city">
             <h5 className="title-city">{city.name}</h5>
           </div>
-          <div className="card-img-city">
-            <img className="img-city" src={city.photo} alt={""} />
+          <div className="img-city">
+            <img className="img-details-city" src={city.photo} alt={""} />
             <h4 className="tittle-details-city">
               Population: {city.population}
-              Edit: {city.botonEdit}
             </h4>
+            {/* <h4>  Edit: {city.botonEdit}</h4> */}
           </div>
           <div />
           <div className="card-details-tourist">
@@ -48,8 +48,8 @@ const DetailsCities = () => {
             console.log(e);
             return (
               <>
-                <div className="cont-city-turist">
-                  <div className="cont-details-tourist">
+                <div >
+                  <div className="card-details-city">
                     <div className="title-city"> {e.name} </div>
                     <div className="cont-img-details">
                       <img className="img-details-city"src={e.photo} alt={e.name}/>
