@@ -4,7 +4,7 @@ import citiesAction from "../actions/citiesAction";
 const initialState = {
    citiesList: [],
    checked: [],
-   searchValue: " ",
+   searchValue: "",
 };
 const citiesReducer = createReducer(initialState, (cities) => {
    cities.addCase(
