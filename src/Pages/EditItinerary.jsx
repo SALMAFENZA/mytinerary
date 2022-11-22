@@ -49,10 +49,9 @@ export default function EditItinerary() {
 
   
     return (
-
-        
+ 
       <>
-        <div className="contentCity">
+        <div className="cont-details-city">
           <div className="content-form">
             <h2>Edit Itinerary</h2>
             <form onSubmit={handleSubmit}>              
@@ -71,7 +70,6 @@ export default function EditItinerary() {
                 defaultValue={itinerary.description}
               />
   
-             
               <input
                 name="price"
                 type="text"
