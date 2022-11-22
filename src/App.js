@@ -11,12 +11,14 @@ import NewCity from './Pages/NewCity'
 import Cities from './Pages/Cities'
 import HomeComplete  from './Components/layouts/HomeComplete'
 import DetailsHotel from "./Components/DetailsHotel";
+
 import MyCities from "./Pages/MyCities";
 import EditCity from "./Pages/EditCity";
 import EditItinerary from "./Pages/EditItinerary";
 import MyTineraries from "./Components/MyTineraries";
 
-// todas las rutas que van en pats minusculas
+// todas las rutas que van en pats min
+import MyHotels from "./Components/MyHotels";
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
           <Route path="/editcity/:id" element={<EditCity />}/>
           <Route path="/edititinerary/:id" element={<EditItinerary />}/>
           <Route path="*" element={<NotFound/>}/>
+          <Route path="/myhotels" element={<MyHotels/>} />
         </Routes>
         </MainComplete>
       </BrowserRouter>
