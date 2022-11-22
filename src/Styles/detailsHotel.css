@@ -21,8 +21,12 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
     width: 70%;
     height: 50%;
+    width: 50rem;
+    
+    min-height: 40rem;
     margin: 1.5rem;
     border-radius: 1rem;
     background-color: rgba(0, 0, 0, 0.92);
@@ -39,6 +43,7 @@
 .cont-img-hotel{
     display: flex;
     padding: 1rem;
+    padding: .5rem;
     border-radius: 1rem;
 }
 .img-hotel{
@@ -58,3 +63,39 @@
     font-weight: 700;
 }
 
+
+
+
+@media screen and (max-width: 1024px){
+    .cont-hotel-card{
+      width: 45rem;
+    }
+    .filter-hotel{
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .cont-hotel-card{
+      width: 35rem;
+    }
+  }
+  @media screen and (max-width: 630px){
+    .cont-hotel-card{
+      width: 30rem;
+    }
+  }
+  @media screen and (max-width: 525px){
+    .cont-hotel-card{
+      width: 25rem;
+    }
+  }
+  @media screen and (max-width: 440px){
+    .cont-hotel-card{
+      width: 20rem;
+    }
+  }
+  @media screen and (max-width: 350px){
+    .cont-hotel-card{
+      width: 17rem;
+    }
+  }

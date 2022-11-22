@@ -20,6 +20,10 @@ import MyTineraries from "./Components/MyTineraries";
 // todas las rutas que van en pats min
 import MyHotels from "./Components/MyHotels";
 
+// todas las rutas que van en pats minusculas
+import MyHotels from "./Components/MyHotels";
+import MyHotels from "./Components/hotelByUser/MyHotels";
+
 function App() {
   return (
     <BrowserRouter>
@@ -40,7 +44,9 @@ function App() {
           <Route path="/edititinerary/:id" element={<EditItinerary />}/>
           <Route path="*" element={<NotFound/>}/>
           <Route path="/myhotels" element={<MyHotels/>} />
-        </Routes>
+
+          <Route path="*" element={<NotFound/>}/>
+                  </Routes>
         </MainComplete>
       </BrowserRouter>
   );
