@@ -32,7 +32,7 @@ let getHotelsNames = createAsyncThunk('getHotelsNames', async(name)=>{
 let getHotelsFilters = createAsyncThunk('getHotelsFilters', async(filter)=>{
     try{
         const resp = await axios.get(`${BASE_URL}/api/hotels/?name=${filter.name}&order=${filter.order}`)
-        console.log(resp)
+        console.log(resp) 
         return{
             listsHotels: resp.data.response
         }

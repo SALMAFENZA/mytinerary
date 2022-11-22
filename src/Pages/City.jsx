@@ -7,6 +7,7 @@ const DetailsCities = () => {
   const { id } = useParams();
   const [city, setCity] = useState([]);
   const [itineraries, setItineraries] = useState([]);
+  
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/cities/${id}`)
@@ -33,6 +34,7 @@ const DetailsCities = () => {
             <img className="img-city" src={city.photo} alt={""} />
             <h4 className="tittle-details-city">
               Population: {city.population}
+              Edit: {city.botonEdit}
             </h4>
           </div>
           <div />
