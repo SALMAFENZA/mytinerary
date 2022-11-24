@@ -42,11 +42,6 @@ export default function EditItinerary() {
           .then((res) => setItinerary(res.data.response))
           .catch((err) => console.log(err))
       }, [id]);
-
-
-
-
-
   
     return (
  

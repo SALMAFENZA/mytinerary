@@ -1,11 +1,12 @@
 .Arrows-carousel{
     flex-direction: row;
+    font-size: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(87, 70, 187, 0.644);
+    background-color: rgba(222, 71, 212, 0.644);
     width: 50%;
-    height: 2rem;
+    height: 3rem;
     border-radius: 2em;
     cursor: pointer;
     font: 2rem;

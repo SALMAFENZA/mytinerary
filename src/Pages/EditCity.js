@@ -92,7 +92,7 @@ export default function EditCity() {
               
               
               <div className="bottom">
-                <button className="botom" type="submit" onClick={handleSubmit}>
+                <button className="botonRegister" type="submit" onClick={handleSubmit}>
                   Edit
                 </button>
               </div>

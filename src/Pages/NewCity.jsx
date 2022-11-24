@@ -45,18 +45,15 @@ export default function AddCity() {
     <>
       <div className="contentCity">
         <div className="content-form">
-          <h2>City</h2>
+          <h2>Add your City</h2>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="text">Name</label>
-            <input
+             <input
               name="name"
               type="text"
               placeholder="Name"
               ref={nameRef}
             />
 
-            
-            <label htmlFor="text">Continent</label>
             <input
               name="continent"
               type="text"
@@ -64,7 +61,6 @@ export default function AddCity() {
               ref={continentRef}
             />
 
-            <label htmlFor="text">Photo</label>
             <input
               name="photo"
               type="text"
@@ -72,14 +68,12 @@ export default function AddCity() {
               ref={photoRef}
             />
 
-            <label htmlFor="text">Population</label>
             <input
               name="Population"
               type="text"
               placeholder="Population"
               ref={populationRef}
             />
-            <label htmlFor="text">User</label>
             <input
               name="User"
               type="text"
@@ -87,9 +81,8 @@ export default function AddCity() {
               ref={userRef}
             />
 
-            
             <div className="bottom">
-              <button className="botom" type="submit" onClick={handleSubmit}>
+              <button className="botonRegister" type="submit" onClick={handleSubmit}>
                 Register
               </button>
             </div>

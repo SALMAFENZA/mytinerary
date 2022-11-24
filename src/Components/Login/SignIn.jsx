@@ -22,7 +22,6 @@ function SignInForm() {
 
       <div className='title-singin'>
 
-        <h1 className='singin-form'>MyTinerary</h1>
         <h2 className='singin-form'>Log-In</h2>
 
       </div>
