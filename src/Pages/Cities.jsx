@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link as NavLink } from "react-router-dom";
 import { ButtonNav } from "../Components/ButtonNav";
 import "../Styles/CityCard.css";
-import { useGetAllQuery, useGetAllContinentQuery } from "../redux/citiesAPI";
+import { useGetAllQuery, useGetAllContinentQuery } from "../redux/reducers/citiesAPI";
 
 export default function CardCities() {
   const [search, setSearch] = useState("");
