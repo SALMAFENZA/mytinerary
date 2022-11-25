@@ -3,43 +3,40 @@
 import React, { useState , useRef } from "react";
 import "../Styles/NewCity.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useNewCityMutation } from "../redux/citiesAPI";
 
 // funcionando correcto
 
 export default function AddCity() {
+let [newCity] = useNewCityMutation()
+
+
+
   const navigate = useNavigate();
 
   const nameRef = useRef();
   const continentRef = useRef();
   const photoRef = useRef();
   const populationRef = useRef();
-  const  userRef= useRef()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // localStorage.setItem('user', JSON.stringify({name, continent, photo, population}));
-    // navigate('login');
 
-    console.log(nameRef)
+    
     const dataCity = {
         name: nameRef.current.value,
         continent: continentRef.current.value,
         photo: photoRef.current.value,
         population: populationRef.current.value,
-        user: userRef.current.value
+        userId: "636f1edc14f79b76f5e442bb"
       };
       console.log(dataCity)
+/// Pista: Va aqui ♥ 
 
-    axios({
-      method: "POST",
-      url: `http://localhost:8000/api/cities`,
-        data: dataCity
-    })
-      .then((response) => alert(response.data.message))
-      .catch((err) => alert(err.response.data.message));
-  };
+newCity(dataCity)
 
+
+    }
 
   return (
     <>
@@ -74,13 +71,7 @@ export default function AddCity() {
               placeholder="Population"
               ref={populationRef}
             />
-            <input
-              name="User"
-              type="text"
-              placeholder="User"
-              ref={userRef}
-            />
-
+           
             <div className="bottom">
               <button className="botonRegister" type="submit" onClick={handleSubmit}>
                 Register
