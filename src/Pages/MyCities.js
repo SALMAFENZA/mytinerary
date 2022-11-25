@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
+import { useGetAllMutation } from '../redux/citiesAPI'
 
 export default function MyCities() {
   const [checkboxArray, setCheckboxArray] = useState([]);
@@ -16,7 +17,7 @@ export default function MyCities() {
   const checkRef = useRef();
   const searchRef = useRef();
 
-  let userId = "637e5f6eb770505b2535a174";
+  let userId = "636f1edc14f79b76f5e442bb"
 
   useEffect(() => {
     axios
@@ -31,37 +32,38 @@ export default function MyCities() {
 
   const checkBox = Array.from(new Set(checkboxArray?.map((e) => e.continent)));
 
-  function deleteCity(e) {
-    e.preventDefault();
-    console.log(e.target.id);
-    let cityId = e.target.id;
+function deleteCity(e){
+e.preventDefault()
+console.log(e.target.id)
+let cityId = e.target.id
 
-    confirmAlert({
-      title: "Delete this city",
-      message: "Are you sure to do this?.",
-      buttons: [
-        {
-          label: "Yes",
-          onClick: () =>
-            axios
-              .delete(`http://localhost:8000/api/cities/${cityId}`)
-              .then((res) => alertFunction(res.data.message)),
-        },
-        {
-          label: "No",
-          onClick: () => alert("Click No"),
-        },
-      ],
-    });
-  }
-  function alertFunction(e) {
-    toast(e);
-    setTrick(false);
-  }
+confirmAlert({
+    title: 'Delete this city',
+    message: 'Are you sure to do this?.',
+    buttons: [
+      {
+        label: 'Yes',
+        onClick: () => 
+        axios.delete(`http://localhost:8000/api/cities/${cityId}`)
+        .then((res) => alertFunction(res.data.message))
+      },
+      {
+        label: 'No',
+        onClick: () => alert('Click No')
+      }
+    ]
+  });
+}
+function alertFunction (e){
+    toast(e)
+    setTrick(false)
+}
 
-  function filterCities() {
-    let value = searchRef.current.value;
-  }
+
+
+function filterCities(){
+let value= searchRef.current.value;
+}
 
   function filterCheck(e) {
     let checks = Array.from(checkRef.current)
