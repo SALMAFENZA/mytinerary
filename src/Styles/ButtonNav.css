@@ -1,10 +1,17 @@
 .title{
-    font-size: 1.3rem;
-    text-align: center;
+    font-size: 1.7rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 1px 1px rgb(231 13 173 / 27%);
+
 }
 a{
+    border-radius: 2rem;
     list-style: none;
     text-decoration: none;
     font-size: 1.2rem;
-    color: white;
+    color: rgb(0, 0, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 1px 1px rgb(231 13 173 / 27%);
+    cursor: pointer;
+
 }

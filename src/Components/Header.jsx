@@ -10,15 +10,18 @@ function Header() {
         <header className="main-nav-header">
                 <div className="buton-nav-header">
                     <h2 className="title">Pages</h2>
-                    <ButtonNav1 n4="Hotels" n5="Home" n6="Cities"/>
+                    <ButtonNav1 n5="Home" n6="Cities"/> 
                 </div>
                 <div className="buton-nav-header">
-                    <h2 className="title">Add a new City or Hotel !</h2>
-                    <ButtonNav2 n7="New Hotel" n8="New Cities" n9="My Hotels" />
+                    <h2 className="title">Your City? </h2>
+                    <ButtonNav2 n7="Edit your city" n8="Add a new city"/>
+                    
+                
                 </div>
                 <div className="buton-nav-header">
                     <h2 className="title">Login - Register</h2>
                     <ButtonNav n1="Sign In" n2="Sign Up"/>
+
                 </div>
         </header>
         </>

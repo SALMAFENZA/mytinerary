@@ -7,7 +7,7 @@ reducer: {
 [citiesAPI.reducerPath] : citiesAPI.reducer,
 [itinerariesAPI.reducerPath] : itinerariesAPI.reducer
 }, 
-ware: (getDefaultMiddleware) =>
+middleware: (getDefaultMiddleware) =>
 getDefaultMiddleware()
 .concat(citiesAPI.middleware)
 .concat(itinerariesAPI.middleware)
