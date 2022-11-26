@@ -44,7 +44,6 @@ export default function SignUp() {
         <div className="content-form">
           <h2>Sign Up</h2>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="text">Name</label>
             <input
               name="name"
               value={name}
@@ -52,8 +51,6 @@ export default function SignUp() {
               placeholder="Name"
               onChange={(e) => setName(e.target.value)}
             />
-
-            <label htmlFor="text">LastName</label>
             <input
               name="surName"
               value={surName}
@@ -61,8 +58,6 @@ export default function SignUp() {
               placeholder="SurName"
               onChange={(e) => setSurName(e.target.value)}
             />
-
-            <label htmlFor="text">Country</label>
             <input
               name="country"
               value={country}
@@ -70,8 +65,6 @@ export default function SignUp() {
               placeholder="Country"
               onChange={(e) => setCountry(e.target.value)}
             />
-
-            <label htmlFor="text">Phone</label>
             <input
               name="mobileNumber"
               value={mobileNumber}
@@ -79,8 +72,6 @@ export default function SignUp() {
               placeholder="Phone"
               onChange={(e) => setMobileNumber(e.target.value)}
             />
-
-            <label htmlFor="email">Email</label>
             <input
               name="mail"
               value={mail}
@@ -88,8 +79,6 @@ export default function SignUp() {
               placeholder="Email"
               onChange={(e) => setMail(e.target.value)}
             />
-
-            <label htmlFor="password">Password</label>
             <input
               name="password"
               value={password}
@@ -99,7 +88,7 @@ export default function SignUp() {
             />
 
             <div className="bottom">
-              <button className="botom-signup" type="submit" onClick={submit}>
+              <button className="botonRegister" type="submit" onClick={submit}>
                 Register
               </button>
             </div>

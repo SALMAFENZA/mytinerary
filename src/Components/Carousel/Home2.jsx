@@ -36,7 +36,6 @@ export default function Home2(props) {
 
   return (
     <div className="slider-container">
-      <h4 className="slider-title">{props.text}</h4>
       <div className="slider-slider">
         <Arrow icon={"⋘"} function={left} /> 
         <Arrow icon={"⋙"} function={right} />

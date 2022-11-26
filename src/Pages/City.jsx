@@ -7,7 +7,7 @@ const DetailsCities = () => {
   const { id } = useParams();
   const [city, setCity] = useState([]);
   const [itineraries, setItineraries] = useState([]);
-  
+
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/cities/${id}`)
@@ -18,10 +18,6 @@ const DetailsCities = () => {
       .then((res) => setItineraries(res.data.response))
       .catch((err) => console.log(err));
   }, [id]);
-
-  console.log(city);
-
-  console.log(id);
 
   return (
     <>
@@ -48,11 +44,15 @@ const DetailsCities = () => {
             console.log(e);
             return (
               <>
-                <div >
+                <div>
                   <div className="card-details-city">
                     <div className="title-city"> {e.name} </div>
                     <div className="cont-img-details">
-                      <img className="img-details-city"src={e.photo} alt={e.name}/>
+                      <img
+                        className="img-details-city"
+                        src={e.photo}
+                        alt={e.name}
+                      />
                     </div>
                     <div className="cont-desciption-city">
                       <div className="cont-text-city"> {e.description} </div>

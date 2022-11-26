@@ -4,22 +4,15 @@ padding: 0%;
 box-sizing: border-box;
 }
 .singin-form{
+    margin-right: 8rem;
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.762);
+    color: rgba(0, 0, 0, 0.98);
 }
-.title-singin{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 45%;
-    width: 100%;
-}
+
 .sigin-body-cont{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('https://i.redd.it/0frpmc4w9gm41.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover ;
@@ -37,7 +30,7 @@ box-sizing: border-box;
     border: solid 5px black;
     border-radius: 1rem;
     opacity: 0.8;
-    background-color: rgba(245, 245, 245, 0.561);
+    background-color: rgba(244, 162, 229, 0.517);
 }
 
 .cont-form-singin{
@@ -72,7 +65,6 @@ box-sizing: border-box;
 
 .button-google:hover{
     color: white;
-    background-color: black;
     font-size: 1.2rem;
     height: 2.5rem;
     width: 75%;
@@ -86,10 +78,10 @@ box-sizing: border-box;
     height: 2rem;
     margin: 1rem;
     width: 50%;
+    color: black;
 }
 
 .submit2-singin-google:hover{
-    color: white;
-    background-color: black;
+    color: rgb(0, 0, 0);
     font-size: 1.2rem;
 }

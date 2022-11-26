@@ -1,11 +1,14 @@
 
 .btn-flotante {
+    width: 2rem;
+    height: 2rem;
+    
     font-size: 16px;
     text-transform: uppercase;
     font-weight: bold;
     color: #ffffff;
     border-radius: 5px;
-    background-color: #d19a48;
+    background-color: #d7167a81;
     padding: 18px 30px;
     position: fixed;
     bottom: 10px;
@@ -15,7 +18,7 @@
     z-index: 99;
 }
 .btn-flotante:hover {
-    background-color: #ec8a0b;; /* Color de fondo */
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.92);
+    background-color: #ec0bca7e;; /* Color de fondo */
+    box-shadow: 0px 15px 20px rgba(164, 7, 128, 0.396);
     transform: translateY(-7px);
 }

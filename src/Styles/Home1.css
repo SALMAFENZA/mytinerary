@@ -4,18 +4,26 @@
     box-sizing: border-box;
 }
 h1{
-    font-size: 3.5rem;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.648);
+    font-size: 5.5rem;
+    text-shadow:  1px 1px rgba(231, 13, 173, 0.27);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
 }
-.body-home1-forro-del-orto{
+h2{
+    display: flex;
+    margin-left: 10rem;
+    font-size: 2rem;
+    text-shadow: 1px 1px rgba(231, 13, 173, 0.27);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;   
+    text-decoration: none;
+}
+.body-home1{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-image: url('https://www.xtrafondos.com/wallpapers/hermoso-atardecer-en-la-playa-8459.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgb(245, 215, 220);
     height: 100vh;
     width: 100%;
 }
@@ -28,21 +36,26 @@ h1{
     width: 100%;
     height: 100%;
 }
-.botom-home1{
-    height: 5rem;
-    width: 12rem;
+.boton-home1{
+
+    height: 6rem;
+    width: 26rem;
     margin: 4rem;
     border-radius: .5rem;
     font-size: 2rem;
-    color: rgb(180, 137, 82);
-    background-color: black;
-    border: solid 2px white;
+    color: rgb(0, 0, 0);
+    background-image: url(https://th.bing.com/th/id/OIP.irpnzdCyON6YPSq66GyAAwHaHa?pid=ImgDet&rs=1);
+    border: solid 2px rgba(255, 255, 255, 0);
+    box-shadow: 10px 5px 5px rgb(0, 0, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 1px 1px rgba(231, 13, 173, 0.27);
 }
-.botom-home1:hover{
+.boton-home1:hover{
+    text-shadow: 1px 1px rgba(231, 13, 173, 0.27);
     font-size: 2.3rem;
     font-weight: 700;
     border-radius:15px 0px 15px 0px;
     box-shadow: 4px 5px black;
     color: black;
-    background-color: rgb(180, 137, 82);
+    background-color: rgb(255, 255, 255);
 }
