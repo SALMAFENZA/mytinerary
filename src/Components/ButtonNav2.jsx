@@ -4,7 +4,7 @@ import "../Styles/ButtonNav.css";
 import { Link as NavLink } from "react-router-dom";
 
 function ButtonNav2(props) {
-  let { n7, n8 } = props;
+  let { n7, n8, n9} = props;
   let [mostrarOcultar, setMostrarOcultar] = useState(false);
 
   //funcion para mostrar el menu
@@ -19,21 +19,25 @@ function ButtonNav2(props) {
           <img
             className="img"
             onClick={hide}
-            src="https://cdn-icons-png.flaticon.com/512/64/64787.png"
-            width="50"
-            height="40"
+            src="https://cdn-icons-png.flaticon.com/512/3240/3240696.png"
+            width="40"
+            height="30"
             alt="-"
-           
           />
           <ul className="ul">
+                    <NavLink to="/new-hotel">
+                        <li className="a">
+                            <a className="ancorLink" href="-">{n7}</a>
+                        </li>
+                    </NavLink>
                     <NavLink to="/new-city">
                         <li className="b">
                             <a className="ancorLink"  href="-">{n8}</a>
                         </li>
                     </NavLink>
-                    <NavLink to='/editcity'>
-                        <li className="a">
-                            <a className="ancorLink" href="-">{n7}</a>
+                    <NavLink to="/myhotels">
+                        <li className="b">
+                            <a className="ancorLink"  href="-">{n9}</a>
                         </li>
                     </NavLink>
           </ul>
@@ -42,9 +46,9 @@ function ButtonNav2(props) {
         <img
           className="img"
           onClick={hide}
-src="https://cdn-icons-png.flaticon.com/512/64/64787.png"          
-width="50"
-          height="40"
+          src="https://cdn-icons-png.flaticon.com/512/3240/3240694.png"
+          width="40"
+          height="30"
           alt="-"
         />
       )}
