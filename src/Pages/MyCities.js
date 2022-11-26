@@ -5,7 +5,7 @@ import "../Styles/CityCard.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { confirmAlert } from "react-confirm-alert"; // Import
+import { confirmAlert } from "react-confirm-alert"; // Import7yu
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import { useGetAllMutation , useDeleteCityMutation } from '../redux/reducers/citiesAPI'
 
