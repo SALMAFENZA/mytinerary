@@ -17,16 +17,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/01/17155044/Avion-despegando.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 75vh;
+  height: 40%;
+  min-height: 95vh;
 }
 .mainbox {
   display: flex;
   background-color: #1085a91b;
-  min-height: 64vh;
+  min-height: 94vh;
   width: 34rem;
   position: relative;
   border-radius: 2em;
@@ -89,9 +89,16 @@
       top: 77%;
       width: 95%;
     padding: 2px;
+    
 }
 
 .Home-btn {
+  background-image: url(https://th.bing.com/th/id/OIP.irpnzdCyON6YPSq66GyAAwHaHa?pid=ImgDet&rs=1);
+    background-size:     cover;  
+    background-repeat: no-repeat;
+    object-fit: cover;
+    margin-top: 1rem;
+    cursor: pointer;
     transition: background-color .5s;
     display: flex;
     align-content: center;
@@ -109,6 +116,5 @@
     background-color: rgba(255, 254, 253, 0.467);
     text-decoration: none;
     color: black;
-    font-weight: 600;
-    border: 5px solid #000000d0;
+    font-weight: 60;
   }

@@ -5,13 +5,16 @@
     flex-wrap: wrap;
     min-height: 100vh;
     width: 100%;
-    background-image: url("https://wallpaperbat.com/img/365276-san-francisco-skyline-hd-wallpaper.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgb(245, 215, 220);
+        box-shadow: 10px 5px 5px rgb(0, 0, 0);
+
+
 }
 .title-city{
-    color: white;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    color: rgb(0, 0, 0);
     font-weight: 700;
     font-size: 2rem;
     text-align: center;
@@ -20,8 +23,8 @@
     display: flex;
     flex-direction: column ;
     align-items: center;
-    background-color: rgba(87, 85, 85, 0.732);
-    border: solid 4px black;
+    box-shadow: 10px 5px 5px rgb(0, 0, 0);
+    border: solid 4px rgb(11, 10, 10);
     border-radius: 1rem;
     width: 40rem;
     min-height: 40rem;
@@ -29,43 +32,66 @@
     opacity: .9;
 }
 .card-img-city{
-    width: 90%;
-    height: 100%;
+    display: flex;
+    box-shadow: 10px 5px 5px rgb(0, 0, 0);
+    flex-direction: column ;
+    align-items: center;
+    width: 100%;
+    height: 10%;
     margin: 1rem;
 }
 .img-city{
+    box-shadow: 10px 5px 5px rgb(0, 0, 0);
     border-radius: 1rem;
     border: solid 2px black;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 1%;
 }
 .img-details-city{
-    height: 50%;
+    height: 10%;
     height: 40%;
 }
 .card-details-tourist{
-    text-align: center;
-    font-weight: 600;
+    display: flex;
+    /* text-align: center; */
+    /* font-weight: 600;
     margin: .7rem;
     font-size: 1.3rem;
-    color: white;
+    color: white; */
 }
-
-/* <------------ card two -----------> */
-.cont-city-turist{
+.contBoton{
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2%;
 }
+.buttonItinerary{
+    display: flex;
+    justify-content: center;
+align-items: center;
+    background-color: rgba(10, 8, 8, 0.343);
+    color: rgb(255, 255, 255);
+    font-size: 100%;
+    border: 2px solid #0f100f24; 
+    height: 3rem;
+    border-radius: 3em;
+    width: 7rem;
+}
+/* <------------ card two -----------> */
+
+
 
 .cont-details-tourist{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     flex-direction: column;
     background-color: rgba(87, 85, 85, 0.732);
     border: solid 4px black;
     border-radius: 1rem;
-    width: 40rem;
-    min-height: 40rem;
+    width: 75rem;
+    min-height: 5rem;
+    height: 20rem;
     margin: 1rem;
     opacity: .9;
 }
@@ -88,7 +114,7 @@
 }
 .cont-text-city{
     text-align: center;
-    color: white;
+    color: rgb(7, 4, 4);
     margin: .5rem;
     font-size: 1.3rem;
     font-family: 700;

@@ -1,62 +1,68 @@
-//esto es el formulario para sumar una nueva ciudad 
+//esto es el formulario para sumar una nueva ciudad
 
-import React, { useState , useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../Styles/NewCity.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useNewCityMutation } from "../redux/reducers/citiesAPI";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 // funcionando correcto
 
 export default function AddCity() {
+  let [newCity, { data: dataNewCity, error }] = useNewCityMutation();
+  let [message, setMessage] = useState("");
+
   const navigate = useNavigate();
 
   const nameRef = useRef();
   const continentRef = useRef();
   const photoRef = useRef();
   const populationRef = useRef();
-  const  userRef= useRef()
 
-  const handleSubmit = (e) => {
+  //////// ------------- COnFIRMACIÓN PARA PREGUNTAR SI QUIERE CREAR UNA CIUDAD*-------//////
+  function createNewCity(e) {
     e.preventDefault();
-    // localStorage.setItem('user', JSON.stringify({name, continent, photo, population}));
-    // navigate('login');
 
-    console.log(nameRef)
-    const dataCity = {
-        name: nameRef.current.value,
-        continent: continentRef.current.value,
-        photo: photoRef.current.value,
-        population: populationRef.current.value,
-        user: userRef.current.value
-      };
-      console.log(dataCity)
+    confirmAlert({
+      title: "Create city",
+      message: "Are you sure to create this city?.",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => {
+            const dataCity = {
+              name: nameRef.current.value,
+              continent: continentRef.current.value,
+              photo: photoRef.current.value,
+              population: populationRef.current.value,
+              userId: "636f1edc14f79b76f5e442bb",
+            };
+            console.log(dataCity);
+            //// ----------- Redux para crear una ciudad. ------------- ////
+            newCity(dataCity).then((i) => setMessage(dataNewCity?.message));
+          },
+        },
+        {
+          label: "No",
+          onClick: () => console.log("Click No"),
+        },
+      ],
+    });
+  }
 
-    axios({
-      method: "POST",
-      url: `http://localhost:8000/api/cities`,
-        data: dataCity
-    })
-      .then((response) => alert(response.data.message))
-      .catch((err) => alert(err.response.data.message));
-  };
 
 
   return (
     <>
       <div className="contentCity">
         <div className="content-form">
-          <h2>City</h2>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="text">Name</label>
-            <input
-              name="name"
-              type="text"
-              placeholder="Name"
-              ref={nameRef}
-            />
+          <h2>Add your City</h2>
+          <form>
+            <input name="name" type="text" placeholder="Name" ref={nameRef} />
 
-            
-            <label htmlFor="text">Continent</label>
             <input
               name="continent"
               type="text"
@@ -64,7 +70,6 @@ export default function AddCity() {
               ref={continentRef}
             />
 
-            <label htmlFor="text">Photo</label>
             <input
               name="photo"
               type="text"
@@ -72,30 +77,27 @@ export default function AddCity() {
               ref={photoRef}
             />
 
-            <label htmlFor="text">Population</label>
             <input
               name="Population"
               type="text"
               placeholder="Population"
               ref={populationRef}
             />
-            <label htmlFor="text">User</label>
-            <input
-              name="User"
-              type="text"
-              placeholder="User"
-              ref={userRef}
-            />
 
-            
             <div className="bottom">
-              <button className="botom" type="submit" onClick={handleSubmit}>
+              <button
+                className="botonRegister"
+                type="submit"
+                onClick={createNewCity}
+              >
                 Register
               </button>
             </div>
           </form>
         </div>
       </div>
+
+      <ToastContainer />
     </>
   );
 }

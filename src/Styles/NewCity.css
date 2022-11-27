@@ -8,15 +8,16 @@ h2{
     text-decoration: underline;
 }
 .contentCity{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: rgba(255, 192, 241, 0.37);
     justify-content: center;
     align-items: center;
-    background-image: url('https://cdn.wallpapersafari.com/36/80/EKWszP.gif');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 .content-form{
     display: flex;
@@ -49,19 +50,24 @@ input{
     margin: .5rem;
     box-shadow: 3px 4px 4px black;
 }
-.bottom{
+.botonRegister{
     text-align: center;
 }
-.botom{
+.botonRegister{
     font-weight: 700;
     font-size: 1.3rem;
-    height: 2.3rem;
+    height: 3.3rem;
     width: 6.5rem;
     border-radius: .5rem;
     margin: .5rem;
+    background-image: url(https://th.bing.com/th/id/OIP.irpnzdCyON6YPSq66GyAAwHaHa?pid=ImgDet&rs=1);
+    background-size:     cover;  
+    background-repeat: no-repeat;
+    object-fit: cover;
+    cursor: pointer;
 }
-.botom:hover{
-    color: rgb(22, 93, 104);
+.botonRegister:hover{
+    color: rgb(0, 0, 0);
     width: 7.3rem;
     text-decoration: underline;
     font-size: 1.5rem;

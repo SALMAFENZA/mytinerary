@@ -4,8 +4,6 @@
     padding: 0;
 }
 
-
-
 .slider-container {
     width: 100%;
     min-height: 100vh;
@@ -13,22 +11,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgb(245, 215, 220);
 }
 
 .slider-slider {
-    width: 90vw;
+    width: 85vw;
     height: calc(90vh - 1.5rem);
+    border-radius:5px 5px 5px 5px;
+
 }
 
 .slider-slider {
-    background-color: rgba(13, 192, 216, 0);
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 1px;
+    border-radius:5px 5px 5px 5px;
+
 }
 
 .slider-event {
-    background-color: rgba(31, 129, 199, 0.285);
+    border-radius:5px 5px 5px 5px;
     width: 50%;
     height: 50%;
     padding: 5px;
@@ -38,30 +40,32 @@
     object-fit: cover;
     height: calc(90% - 1.5rem);
     width: 100%;
+    border-radius:51px 51px 51px 51px;
+
 }
 
-.slider-text, .slider-title {
+.slider-text {
     height: 2rem;
     font-size: 1.5rem;
     text-decoration: dotted;
-    background-color: rgba(76, 156, 210, 0.084);
-    color: rgb(255, 253, 253);
+    background-color: rgba(156, 5, 113, 0.591);
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius:5px 5px 5px 5px;
+    text-shadow: 1px 1px rgba(231, 13, 173, 0.27);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;   
+
 
 }
 .slider-text{
     margin-bottom: -20px;
-    background-color:rgba(76, 157, 210, 0.431);
-    margin: 10px;
+    background-color:rgba(205, 52, 169, 0.378);
+    margin: 11px;
 }
-.slider-title {
-    width: 90vw;
-    background-color:rgba(76, 157, 210, 0.431);
-    margin: 10px;
-}
+
 @media screen and (max-width: 768px){
     
     slider{

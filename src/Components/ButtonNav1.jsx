@@ -15,7 +15,9 @@ return(
     <div>
         {mostraryOcultar ? (
             <>
-                <img className="img" onClick={hidee} src="https://cdn-icons-png.flaticon.com/512/3240/3240696.png"  width="40" height="30"alt="-" />
+                <img className="img" onClick={hidee}            
+                src="https://cdn-icons-png.flaticon.com/512/64/64787.png"
+                  width="50" height="40"alt="-" />
                 <ul className="ul">
 
                     <NavLink to="/hotels">
@@ -39,7 +41,9 @@ return(
                 </ul>
             </>
         ) : (
-            <img className="img" onClick={hidee} src="https://cdn-icons-png.flaticon.com/512/3240/3240694.png"  width="40" height="30" alt="-" />
+            <img className="img" onClick={hidee} 
+            src="https://cdn-icons-png.flaticon.com/512/64/64787.png"
+             width="50" height="40" alt="-" />
         )}
     </div>
 );

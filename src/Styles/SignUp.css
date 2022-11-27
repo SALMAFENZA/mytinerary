@@ -12,10 +12,7 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('https://wallpaperaccess.com/full/1369012.jpg');
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     min-height: 80vh;
     width: 100%;
 }
@@ -44,7 +41,7 @@ label{
     font-weight: 800;
 }
 input{
-    height: 1.5rem;
+    height: 2.5rem;
     border-radius: .7rem;
     text-align: center;
     margin: .5rem;

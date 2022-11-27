@@ -7,6 +7,7 @@ const DetailsCities = () => {
   const { id } = useParams();
   const [city, setCity] = useState([]);
   const [itineraries, setItineraries] = useState([]);
+
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/cities/${id}`)
@@ -18,10 +19,6 @@ const DetailsCities = () => {
       .catch((err) => console.log(err));
   }, [id]);
 
-  console.log(city);
-
-  console.log(id);
-
   return (
     <>
       <div className="cont-details-city">
@@ -29,11 +26,12 @@ const DetailsCities = () => {
           <div className="title-details-city">
             <h5 className="title-city">{city.name}</h5>
           </div>
-          <div className="card-img-city">
-            <img className="img-city" src={city.photo} alt={""} />
+          <div className="img-city">
+            <img className="img-details-city" src={city.photo} alt={""} />
             <h4 className="tittle-details-city">
               Population: {city.population}
             </h4>
+            {/* <h4>  Edit: {city.botonEdit}</h4> */}
           </div>
           <div />
           <div className="card-details-tourist">
@@ -46,11 +44,15 @@ const DetailsCities = () => {
             console.log(e);
             return (
               <>
-                <div className="cont-city-turist">
-                  <div className="cont-details-tourist">
+                <div>
+                  <div className="card-details-city">
                     <div className="title-city"> {e.name} </div>
                     <div className="cont-img-details">
-                      <img className="img-details-city"src={e.photo} alt={e.name}/>
+                      <img
+                        className="img-details-city"
+                        src={e.photo}
+                        alt={e.name}
+                      />
                     </div>
                     <div className="cont-desciption-city">
                       <div className="cont-text-city"> {e.description} </div>
