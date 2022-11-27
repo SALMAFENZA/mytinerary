@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
+import Alerts from "../Components/Alerts";
 
 // funcionando correcto
 
@@ -19,7 +20,7 @@ export default function AddCity() {
 
   const navigate = useNavigate();
 
-  async function alerts(e,i) {
+  function alerts(e,i) {
     const resolveAfter3Sec = new Promise((resolve, reject) => {
       setTimeout(resCreation, 2000);
       
