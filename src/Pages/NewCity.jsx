@@ -59,7 +59,7 @@ export default function AddCity() {
     <>
       <div className="contentCity">
         <div className="content-form">
-          <h2>Add your City</h2>
+          <h2>Create your City</h2>
           <form>
             <input name="name" type="text" placeholder="Name" ref={nameRef} />
 
@@ -83,6 +83,12 @@ export default function AddCity() {
               placeholder="Population"
               ref={populationRef}
             />
+            <input
+              name="UserId"
+              type="text"
+              placeholder="User"
+              // ref={"636f1edc14f79b76f5e442bb"}
+            />
 
             <div className="bottom">
               <button
@@ -90,7 +96,7 @@ export default function AddCity() {
                 type="submit"
                 onClick={createNewCity}
               >
-                Register
+                Create
               </button>
             </div>
           </form>
