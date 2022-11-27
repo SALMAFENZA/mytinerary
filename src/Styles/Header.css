@@ -1,9 +1,9 @@
 .main-nav-header{
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-evenly ;
     width: 100%;
-    height: 15vh;
+    height: 17vh;
     font-weight: 700;
     background-image: url(https://th.bing.com/th/id/OIP.irpnzdCyON6YPSq66GyAAwHaHa?pid=ImgDet&rs=1);
     background-size:     cover;  
@@ -13,6 +13,10 @@
 
 }
 .buton-nav-header{
+    margin-left: 11%;
+    border-radius: 4em;;
+        display: flex;
+align-items: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    display: flex;
     /* text-decoration: dotted; */
     /* align-items: center; */
