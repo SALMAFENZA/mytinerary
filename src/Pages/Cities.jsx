@@ -44,10 +44,13 @@ export default function CardCities() {
         <form ref={checkRef}>
           {checkBox?.map((e) => {
             return (
+              <div key={e}>
+
               <label>
                 {e}
                 <input id={e} type="checkbox" onClick={filterCheck} />
               </label>
+              </div>
             );
           })}
         </form>
@@ -60,9 +63,9 @@ export default function CardCities() {
         />
       </div>
 
-      {cities?.map((e) => {
+      {cities?.map((e) => {        
         return (
-          <div>
+          <div id={e._id} key={e._id}>
             <div className="box2">
               <div className="cont-img">
                 <img className="image" src={e.photo} alt={e.name} />
