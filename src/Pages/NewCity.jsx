@@ -12,10 +12,34 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 // funcionando correcto
 
 export default function AddCity() {
-  let [newCity, { data: dataNewCity, error }] = useNewCityMutation();
   let [message, setMessage] = useState("");
+  let [isSuccess, setIsSuccess] = useState();
+
+  let [newCity, { data: resNewCity }] = useNewCityMutation();
 
   const navigate = useNavigate();
+
+  async function alerts(e,i) {
+    const resolveAfter3Sec = new Promise((resolve, reject) => {
+      setTimeout(resCreation, 2000);
+      
+      function  resCreation() {
+        if (i) {
+          resolve();
+          console.log(e);
+        } else {
+          reject(e);
+          console.log(e);
+        }
+      }
+    });
+    console.log(e);
+    toast.promise(resolveAfter3Sec, {
+      pending: "Creating new city 🚧",
+      success: e + " 👌",
+      error: "Can not create a city 🤯 " + e,
+    });
+  }
 
   const nameRef = useRef();
   const continentRef = useRef();
@@ -32,17 +56,20 @@ export default function AddCity() {
       buttons: [
         {
           label: "Yes",
-          onClick: () => {
+          onClick: async () => {
             const dataCity = {
               name: nameRef.current.value,
               continent: continentRef.current.value,
               photo: photoRef.current.value,
               population: populationRef.current.value,
-              userId: "636f1edc14f79b76f5e442bb",
+              userId: "637e5f6eb770505b2535a175",
             };
-            console.log(dataCity);
             //// ----------- Redux para crear una ciudad. ------------- ////
-            newCity(dataCity).then((i) => setMessage(dataNewCity?.message));
+            newCity(dataCity)
+              .then((e) => {
+                alerts(e.data.message , e.data.success);                
+              })
+              
           },
         },
         {
@@ -53,14 +80,12 @@ export default function AddCity() {
     });
   }
 
-
-
   return (
     <>
       <div className="contentCity">
         <div className="content-form">
           <h2>Create your City</h2>
-          <form>
+          <form onSubmit={createNewCity}>
             <input name="name" type="text" placeholder="Name" ref={nameRef} />
 
             <input
@@ -68,6 +93,7 @@ export default function AddCity() {
               type="text"
               placeholder="continent"
               ref={continentRef}
+              required
             />
 
             <input
@@ -75,27 +101,19 @@ export default function AddCity() {
               type="text"
               placeholder="Photo"
               ref={photoRef}
+              required
             />
 
             <input
               name="Population"
               type="text"
+              required
               placeholder="Population"
               ref={populationRef}
             />
-            <input
-              name="UserId"
-              type="text"
-              placeholder="User"
-              // ref={"636f1edc14f79b76f5e442bb"}
-            />
 
             <div className="bottom">
-              <button
-                className="botonRegister"
-                type="submit"
-                onClick={createNewCity}
-              >
+              <button className="botonRegister" type="submit">
                 Create
               </button>
             </div>
