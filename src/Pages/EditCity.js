@@ -2,13 +2,13 @@ import { React, useRef , useState , useEffect } from "react";
 import "../Styles/NewCity.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
-
+import "react-toastify/dist/ReactToastify.css";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 export default function EditCity() {
     const [city, setCity] = useState([]);
     let id = useParams().id;
-
     const nameRef = useRef();
     const continentRef = useRef();
     const photoRef = useRef();
