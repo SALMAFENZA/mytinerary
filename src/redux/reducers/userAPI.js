@@ -25,8 +25,22 @@ const userAPI = createApi({
         body: data,
       }),
     }),
+    getOneUser: builder.mutation({
+      query: (id) => ({
+        url: `api/auth/me/${id}`,
+        method: "GET",
+      }),
+    }),
+editUser: builder.mutation({
+  query: ({ data, id }) => ({
+    url: `/api/auth/me/${id}`,
+    method: "PATCH",
+    body: data,
+  }),
+})
+
   }),
 });
 
 export default userAPI;
-export const { useCreateMutation , useLoginMutation } = userAPI;
+export const { useCreateMutation , useLoginMutation , useGetOneUserMutation ,useEditUserMutation} = userAPI;
