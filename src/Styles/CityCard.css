@@ -70,6 +70,27 @@ h3{
     height: 25rem;
 color: black;
 box-shadow: 10px 5px 5px rgb(0, 0, 0);
+}
+.botonCreate{
+    height: 2.5rem;
+    width: 6rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    background-image: url(https://th.bing.com/th/id/OIP.irpnzdCyON6YPSq66GyAAwHaHa?pid=ImgDet&rs=1);
+    border: solid 2px rgba(255, 255, 255, 0);
+    box-shadow: 10px 5px 5px rgb(0, 0, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 1px 1px rgba(231, 13, 173, 0.27);
+}
+.botonCreate:hover{
+    text-shadow: 1px 1px rgba(231, 13, 173, 0.27);
+    font-size: 1.9rem;
+    font-weight: 70;
+    border-radius:15px 0px 15px 0px;
+    box-shadow: 4px 5px black;
+    color: black;
+    background-color: rgb(255, 255, 255);
 
 }
 .image{

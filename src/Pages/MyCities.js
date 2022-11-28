@@ -48,10 +48,10 @@ confirmAlert({
       {
         label: 'Yes',
         onClick: () => 
-          //// ----------- Redux para eliminar una ciudad. ------------- ////
         deleteCityRedux(cityId)
         .then(() => alertFunction("City deleted"))
-
+        
+        //// ----------- Redux para eliminar una ciudad. ------------- ////
 
 
         /// -------- Axios para eliminar una ciudad ---------////
@@ -123,15 +123,19 @@ let value= searchRef.current.value;
                 <img className="image" src={e.photo} alt="Cities" />
               </div>
               <h3>{e.name}</h3>
-              <NavLink to={`/city/${e._id}`} className="nav-cities">
-                See More
+              <div className="botonesconteneor">
+              <NavLink to={`/city/${e._id}`} >
+             < button className="botonCreate">  
+                More
+            </button>
               </NavLink>
               <NavLink to={`/editcity/${e._id}`}>
-                <button id={e._id}>Edit</button>{" "}
+                <button className="botonCreate" id={e._id}>Edit</button>{" "}
               </NavLink>
-              <button id={e._id} onClick={deleteCity}>
+              <button className="botonCreate" id={e._id} onClick={deleteCity}>
                 Delete
               </button>
+            </div>
             </div>
           </div>
         );

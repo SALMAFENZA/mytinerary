@@ -5,7 +5,7 @@ import { Link as NavLink } from "react-router-dom";
 
 function ButtonNav1(props) {
 
-    let {n4, n5, n6 } = props;
+    let {n4, n5, n6,n7 } = props;
     let [mostraryOcultar, setMostraryOcultar] = useState(false);
 
     let hidee = () =>{
@@ -37,6 +37,12 @@ return(
                             <a className="ancorLink"  href="-">{n6}</a>
                         </li>
                     </NavLink>
+                    <NavLink to="editcity/6382d72c6eb8318094d88cc5">
+                        <li className="b">
+                            <a className="ancorLink"  href="-">{n7}</a>
+                        </li>
+                    </NavLink>
+
 
                 </ul>
             </>
