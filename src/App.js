@@ -14,6 +14,7 @@ import EditItinerary from "./Pages/EditItinerary";
 import MyTineraries from "./Components/MyTineraries";
 import ProtectedRoute from './Components/ProtectRoute';
 import MyProfile from "./Pages/MyProfile";
+import NewItinerary from "./Pages/NewItinerary";
 // todas las rutas que van en pats minusculas
 
 
@@ -48,6 +49,8 @@ let [role, setRole] = useState()
              <Route element={<ProtectedRoute isAllowed={logged} reDirect="/" />}>
             <Route  path="/mytineraries" element = {<MyTineraries/>}/>
             <Route  path="/myprofile" element = {<MyProfile/>}/>
+            <Route  path="/newitinerary" element = {<NewItinerary/>}/>
+
             </Route>
           )}
           <Route element={<ProtectedRoute isAllowed={role === "admin"} reDirect="/" />}>
