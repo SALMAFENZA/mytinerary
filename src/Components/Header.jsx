@@ -14,7 +14,7 @@ function Header() {
                 </div>
                 <div className="buton-nav-header">
                 <img className="buton-nav-header" src="https://th.bing.com/th/id/OIP.JEYHfXEn6eiFCUGpn8uZ-wHaHa?w=219&h=219&c=7&r=0&o=5&pid=1.7" width="30%" alt="" />
-                    <ButtonNav2 n7="Edit a city" n8="Crete a city"/>
+                    <ButtonNav2 n7="Edit a city" n8="Create a city"/>
                     
                 
                 </div>

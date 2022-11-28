@@ -12,7 +12,7 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 export default function MyProfile() {
   let [userId, setUserId] = useState("6384886e61f54855ac77fcc4");
   let [userInfo, setUserInfo] = useState();
-  let [edit, setEdit] = useState(false);
+  let [edit, setEdit] = useState(true);
   let [photo, setPhoto] = useState();
   let [name, setName] = useState();
   let [age, setAge] = useState();
@@ -100,7 +100,7 @@ export default function MyProfile() {
         <div className="contentProfile">{userInfo?.lastName}</div>
         <div className="contentProfile">{userInfo?.age}</div>
         <div className="contentProfile">{userInfo?.email}</div>
-        <button
+        <button className="botonRegister"
           onClick={(e) => {
             e.preventDefault();
             setEdit(false);
