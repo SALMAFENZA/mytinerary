@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useEffect, useState } from "react";
 import NotFound from "./Pages/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./Pages/SignIn"
@@ -12,24 +12,50 @@ import MyCities from "./Pages/MyCities";
 import EditCity from "./Pages/EditCity";
 import EditItinerary from "./Pages/EditItinerary";
 import MyTineraries from "./Components/MyTineraries";
-
+import ProtectedRoute from './Components/ProtectRoute';
 // todas las rutas que van en pats minusculas
 
+
+
+
 function App() {
+let [user , setUser] = useState()
+let [logged , setLogged] = useState()
+let [role, setRole] = useState()
+
+  useEffect(() => {
+    let token = JSON.parse(localStorage.getItem('token'))
+    if (token) {
+      setRole(JSON.parse(localStorage.getItem('user')).role)
+      setLogged(true)
+    }
+  }, [])
+  console.log(user)
+
+
+
   return (
     <BrowserRouter>
     <MainComplete>
         <Routes>
-          <Route path='/' element = {<HomeComplete/>}/>
-          <Route path='/signup' element = {<SignUp/>}/>
-          <Route path="/signin" element={<SignIn/>}/>
+          <Route path='/' element = {     <HomeComplete/>       }/>
+          <Route path='/signup' element = {  logged  ? <HomeComplete/> :   <SignUp/>      }/>
+          <Route path="/signin" element={    logged ? <HomeComplete/> :   <SignIn/>      }/>
           <Route path="/cardcities" element={<Cities/>}/>
           <Route path='/city/:id' element={<City/>}/>
+          {logged && (
+             <Route element={<ProtectedRoute isAllowed={logged} reDirect="/" />}>
+            <Route  path="/mytineraries" element = {<MyTineraries/>}/>
+            </Route>
+          )}
+          <Route element={<ProtectedRoute isAllowed={role === "admin"} reDirect="/" />}>
           <Route path='/new-city' element={<NewCity/>}/>
           <Route path="/myCities" element = {<MyCities/>}/>
-          <Route path="/mytineraries" element = {<MyTineraries/>}/>
-          <Route path="/editcity/:id" element={<EditCity />}/>
-          <Route path="/edititinerary/:id" element={<EditItinerary />}/>
+          <Route path="/editcity/:id" element={ <EditCity /> }/>
+          </Route>
+          <Route element={<ProtectedRoute isAllowed={role === "user"} reDirect="/" />}>
+          <Route path="/edititinerary/:id" element={ <EditItinerary />}/>
+          </Route>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
         </MainComplete>
