@@ -20,7 +20,7 @@ function SignInForm() {
     
     confirmAlert({
       title: "Login",
-      message: "All the inf is ok?.",
+      message: "Are you ready to log in?.",
       buttons: [
         {
           label: "Yes",

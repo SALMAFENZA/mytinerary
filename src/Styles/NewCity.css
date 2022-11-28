@@ -50,6 +50,58 @@ input{
     margin: .5rem;
     box-shadow: 3px 4px 4px black;
 }
+.singin-form{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.98);
+    background-color: rgba(230, 26, 179, 0.311);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
+    border-radius: 1em;
+    margin-right: 1%;
+}
+.titleProfile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    width: 100%;
+    margin-bottom: 2%;
+    height: 4rem;
+    bottom: 3px;
+    border-radius: 1rem;
+    border: solid 10px rgba(0, 0, 0, 0.098);
+    box-shadow: 4px 4px 2px rgb(0,0,0);
+    background-color: rgba(255, 192, 241, 0.37);
+    opacity: .9;
+}
+.contentProfile{
+    font-size: 1.3rem;
+    width: 100%;
+    margin-bottom: 2%;
+    height: 4rem;
+    display: flex;
+    bottom: 3px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 192, 241, 0.37);
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border: solid 10px rgba(0, 0, 0, 0.098);
+    box-shadow: 4px 4px 2px rgb(0,0,0);
+    opacity: .9;
+}
+.contain-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .botonRegister{
     text-align: center;
 }
@@ -65,47 +117,6 @@ input{
     background-repeat: no-repeat;
     object-fit: cover;
     cursor: pointer;
-}
-.singin-form{
-    
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.98);
-    background-color: rgba(230, 26, 179, 0.311);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
-    border-radius: 1em;
-    margin-right: 1%;
-}
-.titleProfile{
-    display: flex;
-    flex-direction: column;
-    font-size: 2.5rem;
-    width: 100%;
-    margin-bottom: 2%;
-    height: 4rem;
-    bottom: 3px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
-    border: solid 10px rgba(0, 0, 0, 0.098);
-    box-shadow: 4px 4px 2px rgb(0,0,0);
-    background-color: rgba(255, 192, 241, 0.37);
-    opacity: .9;
-}
-.contentProfile{
-    font-size: 1.3rem;
-    width: 100%;
-    margin-bottom: 2%;
-    height: 4rem;
-    display: flex;
-    bottom: 3px;
-    flex-direction: column;
-    background-color: rgba(255, 192, 241, 0.37);
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
-    border: solid 10px rgba(0, 0, 0, 0.098);
-    box-shadow: 4px 4px 2px rgb(0,0,0);
-    opacity: .9;
 }
 
 .botonRegister:hover{
