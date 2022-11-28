@@ -16,7 +16,7 @@ export default function AddCity() {
   let [message, setMessage] = useState("");
   let [isSuccess, setIsSuccess] = useState();
 
-  let [newCity, { data: resNewCity }] = useNewCityMutation();
+  let [newCity] = useNewCityMutation();
 
   const navigate = useNavigate();
 

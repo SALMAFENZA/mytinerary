@@ -13,13 +13,20 @@ const userAPI = createApi({
     ///// newUser ==== useRef()
     create: builder.mutation({
       query: (data) => ({
-        url: "http://localhost:8000/api/auth/sign-up",
+        url: "api/auth/sign-up",
         method: "POST",
         body: data,
       }),
     }),    
+    login: builder.mutation({
+      query: (data) => ({
+        url: `api/auth/sign-in`,
+        method: "PATCH",
+        body: data,
+      }),
+    }),
   }),
 });
 
 export default userAPI;
-export const { useCreateMutation } = userAPI;
+export const { useCreateMutation , useLoginMutation } = userAPI;
