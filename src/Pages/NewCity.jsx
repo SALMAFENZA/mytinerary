@@ -65,7 +65,7 @@ export default function AddCity() {
               population: populationRef.current.value,
               userId: "637e5f6eb770505b2535a175",
             };
-            //// ----------- Redux para crear una ciudad. ------------- ////
+            //// ----------- Redux for create a city. ------------- ////
             newCity(dataCity)
               .then((e) => {
                 alerts(e.data.message , e.data.success);                
