@@ -56,6 +56,11 @@ localStorage.clear()
             alt="-"
           />
           <ul className="ul">
+                    <NavLink to="/myprofile">
+                        <li className="a">
+                            <a className="ancorLink" href="">My profile</a>
+                        </li>
+                    </NavLink>
                     <NavLink to="/SignIn">
                         <li className="a">
                             <a className="ancorLink" href="">{n1}</a>
