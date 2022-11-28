@@ -1,42 +1,85 @@
 import React, { useState } from "react";
 import "../Styles/SignUp.css";
 import { useNavigate } from "react-router-dom";
-
-// funcionando correcto
+import { useCreateMutation } from "../redux/reducers/userAPI";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [age, setAge] = useState("");
+  const [photo, setPhoto] = useState("");
+  const [email, setMail] = useState("");
+  const [password, setPassword] = useState("");
+  let [createUser, { data, error }] = useCreateMutation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem(
-      "user",
-      JSON.stringify({ name, surName, country, mobileNumber, mail, password })
-    );
-    navigate("login");
+console.log(e.target)
+e.target.reset()
+
+    confirmAlert({
+      title: "Create user",
+      message: "All the inf is ok?.",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: async () => {
+            let data = {
+              name: name,
+              lastName: lastName,
+              photo: photo,
+              age: age,
+              email: email,
+              password: password,
+            };
+            console.log(data);
+            //// ----------- Redux for create a user. ------------- ////
+            createUser(data).then((event) => {
+              console.log(event);
+              if (event.data) {
+                alerts(event.data.message, event.data.success);
+                event.data.success ? e.target.reset() : console.log("Hola")
+              } else {
+                alerts(event.error.data.message, event.error.data.success);
+              }
+            });
+          },
+        },
+        {
+          label: "No",
+          onClick: () => console.log("Click No"),
+        },
+      ],
+    });
+    // navigate("login");
   };
 
-  const [name, setName] = useState("");
-  const [surName, setSurName] = useState("");
-  const [country, setCountry] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [mail, setMail] = useState("");
-  const [password, setPassword] = useState("");
+  function alerts(e, i) {
+    const resolveAfter3Sec = new Promise((resolve, reject) => {
+      setTimeout(resCreation, 2000);
 
-  const submit = () => {
-    if (
-      name === "" ||
-      surName === "" ||
-      country === "" ||
-      mobileNumber === "" ||
-      mail === "" ||
-      password === ""
-    ) {
-    } else {
-      localStorage.setItem("name", name);
-      localStorage.setItem("surName", surName);
-    }
-  };
+      function resCreation() {
+        if (i) {
+          resolve();
+          console.log(e);
+        } else {
+          reject(e);
+          console.log(e);
+        }
+      }
+    });
+    console.log(e);
+    toast.promise(resolveAfter3Sec, {
+      pending: "Please wait 🕜",
+      success: e + " please verify your email 👌",
+      error: "Can not create 🤯 " + e,
+    });
+  }
 
   return (
     <>
@@ -50,34 +93,39 @@ export default function SignUp() {
               type="text"
               placeholder="Name"
               onChange={(e) => setName(e.target.value)}
+              required
             />
             <input
               name="surName"
-              value={surName}
+              value={lastName}
               type="text"
-              placeholder="SurName"
-              onChange={(e) => setSurName(e.target.value)}
+              placeholder="Last name"
+              onChange={(e) => setLastName(e.target.value)}
+              required
             />
             <input
               name="country"
-              value={country}
+              value={age}
               type="text"
-              placeholder="Country"
-              onChange={(e) => setCountry(e.target.value)}
+              placeholder="Age"
+              onChange={(e) => setAge(e.target.value)}
+              required
             />
             <input
               name="mobileNumber"
-              value={mobileNumber}
-              type="tel"
-              placeholder="Phone"
-              onChange={(e) => setMobileNumber(e.target.value)}
+              value={photo}
+              type="text"
+              placeholder="Photo"
+              onChange={(e) => setPhoto(e.target.value)}
+              required
             />
             <input
               name="mail"
-              value={mail}
+              value={email}
               type="email"
               placeholder="Email"
               onChange={(e) => setMail(e.target.value)}
+              required
             />
             <input
               name="password"
@@ -85,16 +133,18 @@ export default function SignUp() {
               type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
 
             <div className="bottom">
-              <button className="botonRegister" type="submit" onClick={submit}>
+              <button className="botonRegister" type="submit">
                 Register
               </button>
             </div>
           </form>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }
