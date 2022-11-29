@@ -24,7 +24,7 @@ e.target.reset()
 
     confirmAlert({
       title: "Create user",
-      message: "All the inf is ok?.",
+      message: "Are your entire info ok?.",
       buttons: [
         {
           label: "Yes",
