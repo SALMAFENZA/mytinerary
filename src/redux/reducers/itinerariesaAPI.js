@@ -12,9 +12,10 @@ const itinerariesAPI = createApi({
   endpoints: (builder) => ({
     //// endpoints son las acciones que realizará el redux. ♥
     deleteItineraries: builder.mutation({
-      query: (itinerariesId) => ({
+      query: ({itinerariesId , token}) => ({
         url: `/api/itineraries/${itinerariesId}`,
         method: "DELETE",
+        headers: {"Authorization" : `Bearer ${token}`}
       }),
     }),
   }),
