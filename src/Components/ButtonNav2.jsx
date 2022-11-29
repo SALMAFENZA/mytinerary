@@ -17,11 +17,11 @@ function ButtonNav2(props) {
       {mostrarOcultar ? (
         <>
           <img
-            className="img"
+            className="buton-nav-header"
             onClick={hide}
-            src="https://cdn-icons-png.flaticon.com/512/64/64787.png"
-            width="50"
-            height="40"
+            src="https://th.bing.com/th/id/OIP.JEYHfXEn6eiFCUGpn8uZ-wHaHa?w=219&h=219&c=7&r=0&o=5&pid=1.7"
+            width="60"
+            height="55"
             alt="-"
            
           />
@@ -40,11 +40,11 @@ function ButtonNav2(props) {
         </>
       ) : (
         <img
-          className="img"
+          className="buton-nav-header"
           onClick={hide}
-src="https://cdn-icons-png.flaticon.com/512/64/64787.png"          
-width="50"
-          height="40"
+src="https://th.bing.com/th/id/OIP.JEYHfXEn6eiFCUGpn8uZ-wHaHa?w=219&h=219&c=7&r=0&o=5&pid=1.7"          
+width="90"
+          height="70"
           alt="-"
         />
       )}
