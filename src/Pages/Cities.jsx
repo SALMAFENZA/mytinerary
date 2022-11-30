@@ -32,13 +32,13 @@ export default function CardCities() {
   return (
     <>
       <div className="filters">
-        <NavLink to="/newcity">
+        {/* <NavLink to="/newcity">
           <li className="addCity">
             <ButtonNav className="ancorLink" n2="New City">
               !Add your city!
             </ButtonNav>
           </li>
-        </NavLink>
+        </NavLink> */}
       </div>
       <div className="filters">
         <form ref={checkRef}>

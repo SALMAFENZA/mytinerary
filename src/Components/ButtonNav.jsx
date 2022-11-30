@@ -7,7 +7,6 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 function ButtonNav(props) {
   let { n1, n2, n3, n4 } = props;
   let [mostrarOcultar, setMostrarOcultar] = useState(false);
@@ -28,31 +27,25 @@ function ButtonNav(props) {
   let hide = () => {
     setMostrarOcultar(!mostrarOcultar);
   };
-function logout(){
-  confirmAlert({
-    title: "Log out",
-    message: "Really leave us? 😭",
-    buttons: [
-      {
-        label: "Yes, bye",
-        onClick: async () => {
-localStorage.clear()
-         toast("good bye dear user")
+  function logout() {
+    confirmAlert({
+      title: "Log out",
+      message: "Really leave us? 😭",
+      buttons: [
+        {
+          label: "Yes, bye",
+          onClick: async () => {
+            localStorage.clear();
+            toast("Good bye dear!");
+          },
         },
-      },
-      {
-        label: "No, I'll stay ♥",
-        onClick: () => console.log("Click No"),
-      },
-    ],
-  });
-
-}
-
-
-
-
-
+        {
+          label: "No, I want to stay here ♥",
+          onClick: () => console.log("Click No"),
+        },
+      ],
+    });
+  }
 
   return (
     <div>
@@ -110,19 +103,20 @@ localStorage.clear()
                 </li>
               </NavLink>
             ) : null}
+
           </ul>
         </>
       ) : (
         <img
-          className="img"
+          className="buton-nav-header"
           onClick={hide}
-          src="https://cdn-icons-png.flaticon.com/512/64/64787.png"
-          width="50"
-          height="40"
+          src="https://u7.uidownload.com/vector/461/227/vector-administration-vector-icon-eps.jpg"
+          width="80"
+          height="70"
           alt="-"
         />
       )}
-       <ToastContainer />
+      <ToastContainer />
     </div>
   );
 }
