@@ -15,18 +15,12 @@ export default function MyTineraries() {
   let [deleteItineraryRedux, { data: itineraryRedux, error }] =
     useDeleteItinerariesMutation();
   let [itinerary, setItinerary] = useState();
-  let [userId , setUserId] = useState()
-
-
-
-
-
+  let [userId, setUserId] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(JSON.parse(localStorage.getItem("user"))){
-      console.log("si hay un usuario")
-      setUserId(JSON.parse(localStorage.getItem("user")).id)
+    if (JSON.parse(localStorage.getItem("user"))) {
+      setUserId(JSON.parse(localStorage.getItem("user")).id);
     }
 
     axios
@@ -34,7 +28,6 @@ export default function MyTineraries() {
       .then((res) => setItinerary(res.data.response))
       .catch((err) => console.log(err));
     console.log(itinerary);
-
   }, [userId]);
 
   function deleteItinerary(e) {

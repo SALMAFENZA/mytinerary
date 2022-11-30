@@ -26,12 +26,12 @@ function ButtonNav2(props) {
            
           />
           <ul className="ul">
-                    <NavLink to="/new-city">
+                    <NavLink to="/mycities">
                         <li className="b">
                             <a className="ancorLink"  href="-">{n8}</a>
                         </li>
                     </NavLink>
-                    <NavLink to='/editcity'>
+                    <NavLink to='/new-city'>
                         <li className="a">
                             <a className="ancorLink" href="-">{n7}</a>
                         </li>

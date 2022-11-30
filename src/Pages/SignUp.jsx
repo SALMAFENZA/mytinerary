@@ -106,7 +106,7 @@ e.target.reset()
             <input
               name="country"
               value={age}
-              type="text"
+              type="number"
               placeholder="Age"
               onChange={(e) => setAge(e.target.value)}
               required

@@ -106,7 +106,7 @@ export default function MyProfile() {
             setEdit(false);
           }}
         >
-          Edit my profile
+          Edit
         </button>
       </div>
     </>
@@ -147,28 +147,31 @@ export default function MyProfile() {
             className="contentProfile"
           ></input>
           <input
-          type="password"
+            type="password"
             placeholder="New password"
             onChange={(e) => setPassword(e.target.value)}
             className="contentProfile"
           ></input>
-<div className="contain-buttons">
-          <button className="botonRegister"
-            onClick={(e) => {
-              e.preventDefault();
-              editProfile();
-            }}
-          >
-            Save Profile
-          </button>
-          <button className="botonRegister"
-            onClick={(e) => {
-              e.preventDefault();
-              setEdit(true);
-            }}
-          >
-            Go back
-          </button>
+
+          <div className="bottom">
+            <button
+              className="botonRegister"
+              onClick={(e) => {
+                e.preventDefault();
+                editProfile();
+              }}
+            >
+              Save
+            </button>
+            <button
+              className="botonRegister"
+              onClick={(e) => {
+                e.preventDefault();
+                setEdit(true);
+              }}
+            >
+              Go back
+            </button>
           </div>
         </form>
       </div>
