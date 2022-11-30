@@ -59,3 +59,12 @@ h2{
     color: black;
     background-color: rgb(255, 255, 255);
 }
+/* 
+@media screen and (min-width: 300pxmax){
+h1, h2{
+        font-size: 1rem;
+    }
+    input{
+        width: 15rem;}
+    }
+     */

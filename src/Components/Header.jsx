@@ -9,8 +9,9 @@ function Header() {
         <>
         <header className="main-nav-header">
                     <ButtonNav1 n5="Home" n6="Cities"/> 
-                    <ButtonNav2 n7="Edit a city" n8="Crete a city"/>                     
-                    <ButtonNav n1="Log In" n2="Sign Up"/>
+                    <ButtonNav2 n8="My cities" n7="Crete a city"/>                     
+                    <ButtonNav n1="Log In" n2="Sign Up" n3="My profile" n4="Log out"/>
+                    </div>
         </header>
         </>
                 )

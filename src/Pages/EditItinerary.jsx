@@ -2,6 +2,10 @@ import { React, useRef , useState , useEffect } from "react";
 import "../Styles/NewCity.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function EditItinerary() {
@@ -12,7 +16,7 @@ export default function EditItinerary() {
     const descriptionRef = useRef();
     const priceRef = useRef();
     const durationRef = useRef();
-    const  userRef= useRef()
+    const  photoRef= useRef()
   
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -23,17 +27,40 @@ export default function EditItinerary() {
           description: descriptionRef.current.value,
           price: priceRef.current.value,
           duration: durationRef.current.value,
-          user: userRef.current.value
+          photo: [photoRef.current.value],
         };
+       let JWTToken = JSON.parse(localStorage.getItem("token"))
         console.log(dataItinerary)
   
-      axios({
-        method: "PUT",
-        url: `http://localhost:8000/api/itineraries/${id}`,
-          data: dataItinerary
-      })
-        .then((response) => alert(response.data.message))
-        .catch((err) => alert(err.response.data.message));
+        confirmAlert({
+          title: "Create user",
+          message: "Are you ready to create an user?.",
+          buttons: [
+            {
+              label: "Yes",
+              onClick: async () => {               
+                axios({
+                  method: "PUT",
+                  url: `http://localhost:8000/api/itineraries/${id}`, 
+                  data: dataItinerary,
+                  headers: {"Authorization" : `Bearer ${JWTToken}`}
+                })
+                  .then((e) => alerts(e.data.message , e.data.success))
+                  .catch((err) => alert(err.response.data.message));               
+              },
+            },
+            {
+              label: "No",
+              onClick: () => console.log("Click No"),
+            },
+          ],
+        })
+        
+        
+        
+        
+        
+        
     };
   
     useEffect(() => {
@@ -43,12 +70,37 @@ export default function EditItinerary() {
           .catch((err) => console.log(err))
       }, [id]);
   
+      function alerts(e, i) {
+        const resolveAfter3Sec = new Promise((resolve, reject) => {
+          setTimeout(resCreation, 2000);
+    
+          function resCreation() {
+            if (i) {
+              resolve();
+              console.log(e);
+            } else {
+              reject(e);
+              console.log(e);
+            }
+          }
+        });
+        console.log(e);
+        toast.promise(resolveAfter3Sec, {
+          pending: "Please wait 🕜",
+          success: e + "👌",
+          error: "Can not edit 🤯 " + e,
+        });
+      }
+
+
+
     return (
  
       <>
         <div className="cont-details-city">
           <div className="content-form">
             <h2>Edit Itinerary</h2>
+            <img  className="img-details-city" src={itinerary.photo}/>            
             <form onSubmit={handleSubmit}>              
               <input
                 name="name"
@@ -63,6 +115,13 @@ export default function EditItinerary() {
                 placeholder="description"
                 ref={descriptionRef}
                 defaultValue={itinerary.description}
+              />
+            <input
+                name="photo"
+                type="text"
+                placeholder="photo"
+                ref={photoRef}
+                defaultValue={itinerary.photo}
               />
   
               <input
@@ -84,13 +143,14 @@ export default function EditItinerary() {
               
               
               <div className="bottom">
-                <button className="botom" type="submit" onClick={handleSubmit}>
+                <button className="botom">
                   Edit
                 </button>
               </div>
             </form>
           </div>
         </div>
+        <ToastContainer />
       </>
     );
 }

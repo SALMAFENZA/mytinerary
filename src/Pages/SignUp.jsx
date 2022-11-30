@@ -24,7 +24,7 @@ e.target.reset()
 
     confirmAlert({
       title: "Create user",
-      message: "Are your entire info ok?.",
+      message: "Are you ready to create an user?.",
       buttons: [
         {
           label: "Yes",
@@ -106,7 +106,7 @@ e.target.reset()
             <input
               name="country"
               value={age}
-              type="text"
+              type="number"
               placeholder="Age"
               onChange={(e) => setAge(e.target.value)}
               required

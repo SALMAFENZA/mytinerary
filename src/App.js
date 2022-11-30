@@ -46,20 +46,17 @@ let [role, setRole] = useState()
           <Route path="/cardcities" element={<Cities/>}/>
           <Route path='/city/:id' element={<City/>}/>
           {logged && (
-             <Route element={<ProtectedRoute isAllowed={logged} reDirect="/" />}>
+            <Route element={<ProtectedRoute isAllowed={logged} reDirect="/" />}>
             <Route  path="/mytineraries" element = {<MyTineraries/>}/>
             <Route  path="/myprofile" element = {<MyProfile/>}/>
             <Route  path="/newitinerary" element = {<NewItinerary/>}/>
-
+            <Route path="/edititinerary/:id" element={ <EditItinerary />}/>
             </Route>
           )}
           <Route element={<ProtectedRoute isAllowed={role === "admin"} reDirect="/" />}>
           <Route path='/new-city' element={<NewCity/>}/>
           <Route path="/myCities" element = {<MyCities/>}/>
           <Route path="/editcity/:id" element={ <EditCity /> }/>
-          </Route>
-          <Route element={<ProtectedRoute isAllowed={role === "user"} reDirect="/" />}>
-          <Route path="/edititinerary/:id" element={ <EditItinerary />}/>
           </Route>
           <Route path="*" element={<NotFound/>}/>
         </Routes>

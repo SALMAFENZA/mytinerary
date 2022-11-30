@@ -8,16 +8,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
-import Alerts from "../Components/Alerts";
+
 
 // funcionando correcto
 
 export default function AddCity() {
-  let [message, setMessage] = useState("");
-  let [isSuccess, setIsSuccess] = useState();
+  let [user, setUser] = useState();
 
   let [newCity] = useNewCityMutation();
-
   const navigate = useNavigate();
 
   function alerts(e,i) {
@@ -47,6 +45,15 @@ export default function AddCity() {
   const photoRef = useRef();
   const populationRef = useRef();
 
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("user"))) {
+      setUser(JSON.parse(localStorage.getItem("user")).id);
+    }
+    console.log(user);
+  }, []);
+  console.log(user);
+
+
   //////// ------------- COnFIRMACIÓN PARA PREGUNTAR SI QUIERE CREAR UNA CIUDAD*-------//////
   function createNewCity(e) {
     e.preventDefault();
@@ -63,7 +70,7 @@ export default function AddCity() {
               continent: continentRef.current.value,
               photo: photoRef.current.value,
               population: populationRef.current.value,
-              userId: "637e5f6eb770505b2535a175",
+              userId: user,
             };
             //// ----------- Redux for create a city. ------------- ////
             newCity(dataCity)

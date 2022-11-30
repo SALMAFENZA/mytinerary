@@ -1,0 +1,53 @@
+.containButton{
+    align-items: start;
+    margin-bottom: 25%;
+    opacity: .9;
+}
+
+.botonItineraries{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 6rem;
+    width: 15rem;
+    border-radius: .5rem;
+    margin: 10rem;
+    background-image: url(https://th.bing.com/th/id/OIP.irpnzdCyON6YPSq66GyAAwHaHa?pid=ImgDet&rs=1);
+    box-shadow: 4px 4px 2px rgb(0,0,0);
+    background-size: cover;  
+    background-repeat: no-repeat;
+    object-fit: cover;
+    cursor: pointer;
+}
+.botonItineraries:hover{
+    color: rgb(0, 0, 0);
+    width: 16rem;
+text-decoration: underline;
+}
+.Selector{
+    display: flex;
+flex-direction: column;
+    margin-bottom: 40%;
+    width: 35rem;
+    margin-right: 15%;
+border-radius: 2em;
+height: 2rem;
+background-color: rgba(255, 192, 203, 0.435);
+}
+
+.contentItinerary{
+    font-size: 1.3rem;
+    width: 100%;
+    margin-bottom: 2%;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 192, 241, 0.37);
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border: solid 10px rgba(0, 0, 0, 0.098);
+    box-shadow: 4px 4px 2px rgb(0,0,0);
+    opacity: .9;
+}

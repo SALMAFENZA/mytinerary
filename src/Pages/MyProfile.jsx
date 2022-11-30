@@ -12,7 +12,7 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 export default function MyProfile() {
   let [userId, setUserId] = useState("6384886e61f54855ac77fcc4");
   let [userInfo, setUserInfo] = useState();
-  let [edit, setEdit] = useState(false);
+  let [edit, setEdit] = useState(true);
   let [photo, setPhoto] = useState();
   let [name, setName] = useState();
   let [age, setAge] = useState();
@@ -100,13 +100,13 @@ export default function MyProfile() {
         <div className="contentProfile">{userInfo?.lastName}</div>
         <div className="contentProfile">{userInfo?.age}</div>
         <div className="contentProfile">{userInfo?.email}</div>
-        <button
+        <button className="botonRegister"
           onClick={(e) => {
             e.preventDefault();
             setEdit(false);
           }}
         >
-          Edit my profile
+          Edit
         </button>
       </div>
     </>
@@ -147,28 +147,32 @@ export default function MyProfile() {
             className="contentProfile"
           ></input>
           <input
-          type="password"
+            type="password"
             placeholder="New password"
             onChange={(e) => setPassword(e.target.value)}
             className="contentProfile"
           ></input>
 
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              editProfile();
-            }}
-          >
-            Save changes
-          </button>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              setEdit(true);
-            }}
-          >
-            Go back
-          </button>
+          <div className="bottom">
+            <button
+              className="botonRegister"
+              onClick={(e) => {
+                e.preventDefault();
+                editProfile();
+              }}
+            >
+              Save
+            </button>
+            <button
+              className="botonRegister"
+              onClick={(e) => {
+                e.preventDefault();
+                setEdit(true);
+              }}
+            >
+              Go back
+            </button>
+          </div>
         </form>
       </div>
     </>
