@@ -9,9 +9,10 @@ const citiesAPI = createApi({
     baseUrl: BASE_URL, /// LocalHost:8000
   }),
 
-  endpoints: (builder) => ({   //// endpoints son las acciones que realizará el redux. ♥ 
+  endpoints: (builder) => ({
+    //// endpoints son las acciones que realizará el redux. ♥
 
-     //// getAll ========= useState()
+    //// getAll ========= useState()
     getAll: builder.query({
       query: ({ search, checkbox }) =>
         `/api/cities?name=${search}&continent=${checkbox}`,
@@ -34,11 +35,16 @@ const citiesAPI = createApi({
     deleteCity: builder.mutation({
       query: (cityId) => ({
         url: `/api/cities/${cityId}`,
-        method: "DELETE"
+        method: "DELETE",
       }),
     }),
   }),
 });
 
 export default citiesAPI;
-export const { useGetAllQuery, useGetAllContinentQuery , useNewCityMutation, useDeleteCityMutation } = citiesAPI;
+export const {
+  useGetAllQuery,
+  useGetAllContinentQuery,
+  useNewCityMutation,
+  useDeleteCityMutation,
+} = citiesAPI;
