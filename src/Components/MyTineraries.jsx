@@ -82,7 +82,7 @@ export default function MyTineraries() {
 
   return (
     <>
-      <h3 className="Home-btn" onClick={() => navigate("/newitinerary")}>
+      <h3 className="Home-btn-itinerary" onClick={() => navigate("/newitinerary")}>
         Create a new itinerary
       </h3>
       {itinerary?.map((e) => (
