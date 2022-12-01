@@ -1,0 +1,12 @@
+.reaction-btn{
+    gap: 10px;
+    cursor: pointer;
+    height: 30px;
+}
+.reaction-btn:hover{
+    transform: scale(110%);
+}
+.reaction-container{
+    display: flex;
+    gap: 7px;
+}
