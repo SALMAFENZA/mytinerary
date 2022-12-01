@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
-import "../Styles/NewItinerary.css";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
+
 
 export default function NewItinerary() {
   let [cities, setCities] = useState();
@@ -98,7 +98,7 @@ export default function NewItinerary() {
 
   return (
     <>
-      <div className="containButton">
+      <div className="createbuttonitin">
         <div className="botonItineraries">Create a new itinerary</div>
       </div>
       <div className="Selector">
