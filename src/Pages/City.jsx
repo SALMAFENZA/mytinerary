@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../Styles/City.css";
 import axios from "axios";
+import Reactions from "../Components/Reactions";
 
 const DetailsCities = () => {
   const { id } = useParams();
@@ -62,7 +63,9 @@ const DetailsCities = () => {
                       <div className="cont-text-city">
                         time duration :{e.duration}
                       </div>
+                      <Reactions itineraryId={e._id} />
                     </div>
+                <button> Open Comments </button>
                   </div>
                 </div>
               </>
