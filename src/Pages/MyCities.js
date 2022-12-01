@@ -50,8 +50,8 @@ export default function MyCities() {
         {
           label: "Yes",
           onClick: () =>
-          //// ----------- Redux para eliminar una ciudad. ------------- ////
             deleteCityRedux(cityId).then((e) => {
+              //// ----------- Redux para eliminar una ciudad. ------------- ////
               alertFunction(e.data.message);
               setChange(e.data.response);
             }),
@@ -86,33 +86,9 @@ export default function MyCities() {
   }
   return (
     <>
+     
       <div className="filters">
-        {/* <NavLink to="/newcity">
-          <li className="addCity">
-            <ButtonNav className="ancorLink" n2="">
-              !Add your city!
-            </ButtonNav>
-          </li>
-        </NavLink> */}
-      </div>
-      <div className="filters">
-        <form ref={checkRef}>
-          {checkBox?.map((e) => {
-            return (
-              <label>
-                {e}
-                <input id={e} type="checkbox" onClick={filterCheck} />
-              </label>
-            );
-          })}
-        </form>
-        <label className="inputs">Serch Here</label>
-        <input
-          onKeyUp={filterCities}
-          ref={searchRef}
-          className="search"
-          type="text"
-        />
+
       </div>
 
       {cities?.map((e) => {
