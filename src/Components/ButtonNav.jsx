@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function ButtonNav(props) {
-  let { n1, n2, n3, n4 } = props;
+  let { n1, n2, n3, n4, n8, n10, n12 } = props;
   let [mostrarOcultar, setMostrarOcultar] = useState(false);
   let [userRole, setUserRole] = useState();
   let [user, setUser] = useState();
@@ -17,7 +17,6 @@ function ButtonNav(props) {
     if (JSON.parse(localStorage.getItem("user"))) {
       setUser(JSON.parse(localStorage.getItem("user")));
       setUserRole(JSON.parse(localStorage.getItem("user")).role);
-
     }
     console.log(user);
   }, []);
@@ -57,8 +56,8 @@ function ButtonNav(props) {
               onClick={hide}
               src={user.photo}
               margin-bottom="5rem"
-              width="50"
-              height="40"
+              width="80"
+              height="60"
               alt="-"
             />
           ) : null}
@@ -69,6 +68,25 @@ function ButtonNav(props) {
                 <li className="a">
                   <a className="ancorLink" href="">
                     {n3}
+                  </a>
+                </li>
+              </NavLink>
+            ) : null}
+            {user ? (
+              <NavLink to="/myCities">
+                <li className="a">
+                  <a className="ancorLink" href="">
+                    {n8}
+                  </a>
+                </li>
+              </NavLink>
+            ) : null}
+      
+             {user ? (
+              <NavLink to="/myReactions">
+                <li className="a">
+                  <a className="ancorLink" href="">
+                    {n10}
                   </a>
                 </li>
               </NavLink>
@@ -103,7 +121,6 @@ function ButtonNav(props) {
                 </li>
               </NavLink>
             ) : null}
-
           </ul>
         </>
       ) : (
