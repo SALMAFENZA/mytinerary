@@ -4,7 +4,7 @@ import {
   useDeleteReactionMutation,
   useAddReactionMutation,
   useGetReactionMutation,
-} from "../redux/reducers/reactions";
+} from "../redux/reducers/reactionsAPI";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { confirmAlert } from "react-confirm-alert"; // Import
@@ -17,23 +17,38 @@ export default function Reactions(props) {
   let [addReactionRedux] = useAddReactionMutation();
   let [delReactionRedux] = useDeleteReactionMutation();
   let [getReactionRedux] = useGetReactionMutation();
-  let [userIdLogged, setUserIdLogged] = useState();
+  let [token, setToken] = useState();
+  let [idUser, setIdUser] = useState();
+  let [change, setChange] = useState();
 
   useEffect(() => {
-    if (localStorage.getItem("user")) {
-      setUserIdLogged(JSON.parse(localStorage.getItem("user")).id);
+    if (localStorage.getItem("token")) {
+      setToken(JSON.parse(localStorage.getItem("token")));
+      setIdUser(JSON.parse(localStorage.getItem("user")).id);
     }
-
+    console.log(token);
     getReactionRedux({ itineraryId, userId }).then((e) => {
       setReactions(e.data.response);
       console.log(e.data.response);
       console.log(e.data.response[0].userId.length);
     });
-  }, []);
+  }, [change]);
 
-  function reactionAddDel(e) {
-    let idReaction = e.target.id;
-    console.log(idReaction);
+  function addDelReaction(reaction) {    
+    let { userId } = reaction;
+    let id = reaction._id;
+    let findUser = userId.some((e) => e._id === idUser);
+
+    if (findUser) {
+      console.log("Coincide");
+      addReactionRedux({ id, token }).then((e) => {console.log(e.data.message); setChange(e.data.message)});
+    } else {
+      console.log("No coincide");
+      addReactionRedux({ id, token }).then((e) => {console.log(e.data.message); setChange(e.data.message)});
+    }
+  }
+  function reactionAddDel(e, o) {
+    let idReaction = o.target.id;
 
     confirmAlert({
       title: "Reaction",
@@ -41,7 +56,9 @@ export default function Reactions(props) {
       buttons: [
         {
           label: "Yes",
-          onClick: () => console.log("hola"),
+          onClick: () => {
+            addDelReaction(e);
+          },
         },
         {
           label: "No",
@@ -50,16 +67,17 @@ export default function Reactions(props) {
       ],
     });
   }
+
   return (
     <div className="reaction-container">
       {reactions?.map((e) => {
         return (
           <div className="reaction-container" key={e.name}>
             <img
-              onClick={(e) => reactionAddDel(e)}
+              onClick={(o) => reactionAddDel(e, o)}
               className="reaction-btn"
               id={e._id}
-              src={e.iconBack}
+              src={e.userId.some((h) => h._id === idUser) ? e.icon : e.iconBack}
             ></img>
             <div className="reaction-number">{e.userId?.length}</div>
           </div>
