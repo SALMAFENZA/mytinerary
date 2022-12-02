@@ -15,7 +15,6 @@ export default function Reactions(props) {
   let { itineraryId } = props;
   let [reactions, setReactions] = useState();
   let [addReactionRedux] = useAddReactionMutation();
-  let [delReactionRedux] = useDeleteReactionMutation();
   let [getReactionRedux] = useGetReactionMutation();
   let [token, setToken] = useState();
   let [idUser, setIdUser] = useState();
