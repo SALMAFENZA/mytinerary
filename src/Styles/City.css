@@ -7,9 +7,25 @@
     width: 100%;
     background-color: rgb(245, 215, 220);
         box-shadow: 10px 5px 5px rgb(0, 0, 0);
-
-
 }
+.card-details-city-more{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    box-shadow: 10px 5px 5px rgb(0, 0, 0);
+    border: solid 4px rgb(11, 10, 10);
+    border-radius: 1rem;
+    width: 100%;
+    margin: 1rem;
+    opacity: .9;
+    }
+    .img-city-detail-more{
+        border-radius: 1rem;
+        width: 90%;
+        height: 26rem;
+        padding: 3%;
+    }
+
 .title-city{
     display: flex;
     flex-direction: column ;
@@ -19,6 +35,16 @@
     font-size: 2rem;
     text-align: center;
 }
+.title-city-more{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+}
+
 .card-details-city{
     display: flex;
     flex-direction: column ;
