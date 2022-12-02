@@ -31,8 +31,11 @@ const reactionsAPI = createApi({
       }),
     }),
     getReaction: builder.mutation({
-      query: ({ itineraryId, userId }) => ({
+      query: ({ itineraryId, userId , token }) => ({
         url: `/api/reactions?itineraryId=${itineraryId}&userId=${userId}`,
+        headers: {
+          Authorization: "Bearer " + `${token}`, 
+        },
       }),
     }),
   }),
