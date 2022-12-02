@@ -42,8 +42,6 @@ export default function NewReaction() {
     });
   }
 
-  //// itineraryId
-  //// [userId]
   function submit(e) {
     console.log(e.target.value);
 
