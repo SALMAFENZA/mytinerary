@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import citiesAPI from "./reducers/citiesAPI";
 import itinerariesAPI from "./reducers/itinerariesaAPI";
 import userAPI from "./reducers/userAPI";
-import reactionsAPI from "./reducers/reactions";
+import reactionsAPI from "./reducers/reactionsAPI";
 
 export default configureStore({
 reducer: {
