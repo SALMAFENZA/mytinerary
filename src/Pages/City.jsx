@@ -23,18 +23,18 @@ const DetailsCities = () => {
   return (
     <>
       <div className="cont-details-city">
-        <div className="card-details-city">
+        <div className="card-details-city-more">
           <div className="title-details-city">
             <h5 className="title-city">{city.name}</h5>
           </div>
-          <div className="img-city">
+          <div className="img-city-detail-more">
             <img className="img-details-city" src={city.photo} alt={""} />
             <h4 className="tittle-details-city">
               Population: {city.population}
             </h4>
             {/* <h4>  Edit: {city.botonEdit}</h4> */}
           </div>
-          <div />
+          <div/>
           <div className="card-details-tourist">
             <div>{city.description}</div>
           </div>
@@ -42,12 +42,11 @@ const DetailsCities = () => {
 
         <div>
           {itineraries.map((e) => {
-            console.log(e);
             return (
               <>
                 <div>
                   <div className="card-details-city">
-                    <div className="title-city"> {e.name} </div>
+                    <div className="title-city-more"> {e.name} </div>
                     <div className="cont-img-details">
                       <img
                         className="img-details-city"
