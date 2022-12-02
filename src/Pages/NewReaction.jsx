@@ -1,4 +1,4 @@
-import React, { useRef, useState ,useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { confirmAlert } from "react-confirm-alert"; // Import
@@ -13,16 +13,12 @@ export default function NewReaction() {
   let iconRef = useRef();
   let iconBackRef = useRef();
 
-useEffect(() => {
- 
-axios.get('http://localhost:8000/api/itineraries')
-.then((e) => setItinerary(e.data.response)) 
-
-}, [])
-
-
-
-
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/itineraries")
+      .then((e) => setItinerary(e.data.response));
+    userId(JSON.parse(localStorage.getItem("user")).id);
+  }, []);
 
   function alerts(e, i) {
     const resolveAfter3Sec = new Promise((resolve, reject) => {
@@ -63,13 +59,17 @@ axios.get('http://localhost:8000/api/itineraries')
               name: nameRef.current.value,
               icon: iconRef.current.value,
               iconBack: iconBackRef.current.value,
-              userId: user,
+              userId: [],
             };
-            //// ----------- Redux for create a city. ------------- ////
+
             console.log(reaction);
-            // .then((e) => {
-            //   alerts(e.data.message , e.data.success);
-            // })
+            axios({
+              method: "POST",
+              url: `http://localhost:8000/api/reactions/`,
+              data: reaction,
+            })
+              .then((e) => alerts(e.data.message, e.data.success))
+              .catch((err) => alerts(err.response.data.message, false));
           },
         },
         {
@@ -89,16 +89,16 @@ axios.get('http://localhost:8000/api/itineraries')
           }}
         >
           <select
-          onChange={(e) => {
-            e.preventDefault();
-            setItineraryId(e.target.value);
-          }}>
+            onChange={(e) => {
+              e.preventDefault();
+              setItineraryId(e.target.value);
+            }}
+          >
             <option hidden>Select Itinerary</option>
             {itinerary?.map((e) => (
-                <option key={e._id} value={e._id}>
-              {e.name}
-            </option>
-
+              <option key={e._id} value={e._id}>
+                {e.name}
+              </option>
             ))}
           </select>
           <label>
@@ -128,6 +128,7 @@ axios.get('http://localhost:8000/api/itineraries')
           <button>Create</button>
         </form>
       </div>
+      <ToastContainer />
     </>
   );
 }
