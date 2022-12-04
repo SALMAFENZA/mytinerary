@@ -60,7 +60,14 @@ function ButtonNav(props) {
               height="60"
               alt="-"
             />
-          ) : null}
+          ) :  <img
+          className="buton-nav-header"
+          onClick={hide}
+          src="https://u7.uidownload.com/vector/461/227/vector-administration-vector-icon-eps.jpg"
+          width="80"
+          height="70"
+          alt="-"
+        />}
 
           <ul className="ul">
             {user ? (
@@ -111,6 +118,7 @@ function ButtonNav(props) {
                 </li>
               </NavLink>
             )}
+           
 
             {user ? (
               <NavLink>
@@ -123,16 +131,24 @@ function ButtonNav(props) {
             ) : null}
           </ul>
         </>
-      ) : (
+      ) : (userRole ? (
         <img
           className="buton-nav-header"
           onClick={hide}
-          src="https://u7.uidownload.com/vector/461/227/vector-administration-vector-icon-eps.jpg"
+          src={user.photo}
+          margin-bottom="5rem"
           width="80"
-          height="70"
+          height="60"
           alt="-"
         />
-      )}
+      ) :  <img
+      className="buton-nav-header"
+      onClick={hide}
+      src="https://u7.uidownload.com/vector/461/227/vector-administration-vector-icon-eps.jpg"
+      width="80"
+      height="70"
+      alt="-"
+    /> )}
       <ToastContainer />
     </div>
   );
