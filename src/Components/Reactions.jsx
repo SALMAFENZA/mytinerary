@@ -11,8 +11,7 @@ import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 export default function Reactions(props) {
-  let {setReactionProps} = props
-  let userId = "";
+  let {setReactionProps} = props  
   let { itineraryId } = props;
   let [reactions, setReactions] = useState();
   let [addReactionRedux] = useAddReactionMutation();
@@ -27,12 +26,12 @@ export default function Reactions(props) {
       setIdUser(JSON.parse(localStorage.getItem("user")).id);
     }
     console.log(token);
-    getReactionRedux({ itineraryId, userId , token }).then((e) => {
+    getReactionRedux( itineraryId ).then((e) => {
       setReactions(e.data.response);
       console.log(e.data.response);
       console.log(e.data.response[0].userId.length);
     });
-  }, [change , token]);
+  }, [change]);
 
   function addDelReaction(reaction) {    
     let { userId } = reaction;
