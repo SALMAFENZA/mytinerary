@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { useGetReactionMutation } from "../redux/reducers/reactionsAPI";
+import { useGetReactionByUserMutation } from "../redux/reducers/reactionsAPI";
 import Reactions from "../Components/Reactions";
 
 export default function MyReactions() {
@@ -8,10 +8,11 @@ export default function MyReactions() {
   let [token, setToken] = useState();
   let [reactions, setReaction] = useState();
   let [reactionProps, setReactionProps] = useState();
-  let [getReactionRedux] = useGetReactionMutation();
+  let [getReactionRedux] = useGetReactionByUserMutation();
+
 
   useEffect(() => {
-    getReactionRedux({ itineraryId, userId, token }).then((e) => {
+    getReactionRedux({ userId, token }).then((e) => {
       setReaction(e.data.response);
       console.log(e);
       console.log(e.data.response[0].userId.length);
